@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>台股 ETF 管理系統</title>
+  <style>
+    :root {
+      --bg: #f1eee7;
+      --panel: #ffffff;
+      --panel-soft: #faf8f3;
+      --line: #e6dfd2;
+      --line-strong: #d6cdbd;
+      --text: #171717;
+      --muted: #66625a;
+      --teal: #0f8b8d;
+      --teal-dark: #0b6d6f;
+      --teal-soft: #dff4f4;
+      --good: #177b45;
+      --warn: #b16918;
+      --bad: #b14a4a;
+      --shadow: 0 16px 42px rgba(0, 0, 0, 0.09);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --gap: 16px;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      color: var(--text);
+      background:
+        linear-gradient(180deg, #090909 0%, #0d0d0d 30%, #1f1f1f 58%, #2f2f2f 70%, #f1eee7 70%, #f1eee7 100%);
+    }
+
+    .page {
+      width: min(1500px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 0 0 24px;
+    }
+
+    .app {
+      background: var(--bg);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 28px 28px 0 0;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 18px 12px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.92));
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(15, 139, 141, 0.14);
+    }
+
+    h1 {
+      margin: 4px 0 8px;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: .02em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .refresh-btn,
+    .button-primary,
+    .button-secondary,
+    .tag {
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      font: inherit;
+    }
+
+    .refresh-btn {
+      background: var(--teal);
+      color: #fff;
+      padding: 10px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(15, 139, 141, 0.22);
+    }
+
+    .refresh-btn:hover { background: var(--teal-dark); }
+
+    .last-updated {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 355px minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .left, .right, .news-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 14px 16px 0;
+    }
+
+    .panel-header h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: .02em;
+    }
+
+    .panel-header p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 14px 16px 0;
+    }
+
+    .tab {
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+      border-radius: 12px;
+      padding: 10px 0;
+      font-weight: 700;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .tab.is-active {
+      background: var(--teal);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .form {
+      display: grid;
+      gap: 10px;
+      padding: 14px 16px 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 11px 12px;
+      background: #fff;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+    }
+
+    .field textarea { min-height: 78px; resize: vertical; }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .button-secondary,
+    .button-primary {
+      padding: 11px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .button-secondary {
+      background: #fff;
+      color: var(--text);
+    }
+
+    .button-primary {
+      background: var(--teal);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .mini-panel {
+      padding: 14px 16px 16px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel-soft);
+    }
+
+    .mini-item strong { font-size: 13px; }
+    .mini-item span { color: var(--muted); font-size: 12px; }
+
+    .summary-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      min-height: 92px;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .stat .value {
+      font-size: 25px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .stat .delta {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .stat.good .value, .good { color: var(--good); }
+    .stat.bad .value, .bad { color: var(--bad); }
+    .stat.warn .value, .warn { color: var(--warn); }
+
+    .holdings {
+      padding: 0 0 12px;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      padding: 0 16px 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: #f9f6ef;
+      color: #5f5b54;
+      font-size: 12px;
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    tbody td {
+      padding: 11px 10px;
+      border-bottom: 1px solid #f0eadf;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .table-note {
+      padding: 0 16px 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .backtest-card {
+      padding: 0 0 12px;
+    }
+
+    .mock-portfolio-card {
+      padding: 0 0 12px;
+    }
+
+    .backtest-chart {
+      padding: 0 16px 16px;
+    }
+
+    .mock-portfolio-chart {
+      padding: 0 16px 16px;
+    }
+
+    .backtest-chart-shell {
+      position: relative;
+    }
+
+    .mock-portfolio-shell {
+      position: relative;
+    }
+
+    .backtest-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      align-items: center;
+      padding: 4px 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .backtest-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .backtest-legend i {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #0f8b8d;
+    }
+
+    .legend-line { background: linear-gradient(90deg, #0f8b8d, #0f8b8d); height: 3px !important; border-radius: 999px !important; }
+    .legend-fill { background: rgba(15, 139, 141, 0.10) !important; border: 1px solid rgba(15, 139, 141, 0.18); }
+    .legend-high { background: #177b45 !important; }
+    .legend-low { background: #b16918 !important; }
+
+    .mock-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      align-items: center;
+      padding: 4px 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .mock-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mock-legend i {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #0f8b8d;
+    }
+
+    .legend-open { background: #9dbfc0 !important; }
+    .legend-close { background: #0f8b8d !important; }
+    .legend-delta-pos { background: #177b45 !important; }
+    .legend-delta-neg { background: #b14a4a !important; }
+
+    .mock-chart-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .mock-chart-title strong {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .mock-portfolio-chart svg {
+      margin-top: 6px;
+    }
+
+    .chart-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .backtest-tooltip {
+      position: absolute;
+      z-index: 2;
+      min-width: 156px;
+      padding: 10px 12px;
+      border: 1px solid rgba(15, 139, 141, 0.22);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.12);
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.45;
+      opacity: 0;
+      transform: translate(-50%, -120%);
+      pointer-events: none;
+      transition: opacity 0.14s ease;
+    }
+
+    .backtest-tooltip.is-visible {
+      opacity: 1;
+    }
+
+    .backtest-tooltip .tip-date {
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    .backtest-tooltip .tip-value {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--teal-dark);
+    }
+
+    .backtest-tooltip .tip-meta {
+      margin-top: 2px;
+      color: var(--muted);
+    }
+
+    .chart-empty {
+      padding: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    .news-section {
+      padding: 0 16px 18px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .section-title .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .news-card {
+      background: linear-gradient(180deg, #fff, #faf8f4);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      min-height: 220px;
+      max-height: 520px;
+      overflow-y: auto;
+    }
+
+    .news-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .news-main {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .news-bullets {
+      margin: 0;
+      padding: 0 0 0 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .news-bullets li {
+      padding-left: 4px;
+    }
+
+    .news-item-title {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .news-title-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .news-title-link:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .news-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .news-strength {
+      flex: 0 0 auto;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-strength.low {
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+    }
+
+    .news-strength.medium {
+      background: #fff3d6;
+      color: #a06a00;
+    }
+
+    .news-strength.high {
+      background: #ffe0e0;
+      color: #b14a4a;
+    }
+
+    .news-item-summary {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .muted { color: var(--muted); }
+
+    .empty {
+      padding: 18px;
+      color: var(--muted);
+      text-align: center;
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background: rgba(255,255,255,.45);
+    }
+
+    @media (max-width: 1200px) {
+      .layout { grid-template-columns: 1fr; }
+      .summary-row, .news-grid { grid-template-columns: 1fr; }
+      .hero-gap { height: 180px; }
+      .header-actions { align-items: flex-start; }
+      .app-header { flex-direction: column; }
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100vw - 16px, 100vw); }
+      .app { border-radius: 20px 20px 0 0; }
+      h1 { font-size: 28px; }
+      .layout { padding: 12px; }
+      .tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="app">
+      <header class="app-header">
+        <div>
+          <div class="eyebrow">0050 操作系統</div>
+          <h1>台股 ETF 管理系統</h1>
+          <p class="subtitle">右側持倉明細與回測趨勢，下方三大分類新聞快照。</p>
+        </div>
+        <div class="header-actions">
+          <button class="refresh-btn" id="refreshBtn" type="button">更新最新資料</button>
+          <div class="last-updated">資料日期：<strong id="dataDate">載入中</strong><br/>最後更新：<span id="lastUpdated">--</span></div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="left">
+          <section class="panel mini-panel">
+            <h2 style="margin:0; font-size:18px;">系統快照</h2>
+            <div class="mini-list" id="systemSnapshot"></div>
+          </section>
+
+          <section class="panel mini-panel">
+            <h2 style="margin:0; font-size:18px;">今日執行紀錄</h2>
+            <div class="mini-list" id="executionList"></div>
+          </section>
+        </aside>
+
+        <section class="right">
+          <div class="summary-row" id="summaryCards"></div>
+
+          <section class="panel holdings">
+            <div class="panel-header">
+              <h2>0050 持倉明細表</h2>
+              <p>直接由 `trade_state.json` 讀取，顯示模擬倉持有成本、資產與損益。</p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>欄位</th>
+                    <th>數值</th>
+                    <th>說明</th>
+                  </tr>
+                </thead>
+                <tbody id="holdingRows"></tbody>
+              </table>
+            </div>
+            <div class="table-note" id="holdingNote">讀取中…</div>
+          </section>
+
+          <section class="panel backtest-card">
+            <div class="panel-header">
+              <h2>回測趨勢圖</h2>
+              <p>以 `backtest_switch_summary.csv` 的 `portfolio_value_after` 繪製從第一筆到目前日期的折線圖。</p>
+            </div>
+            <div class="backtest-chart" id="backtestChart"></div>
+          </section>
+
+          <section class="panel mock-portfolio-card">
+            <div class="panel-header">
+              <h2>模擬倉趨勢圖</h2>
+              <p>上圖顯示每日總資產主趨勢，下圖顯示同日 09:30 → 13:20 的日內變化量。</p>
+            </div>
+            <div class="mock-portfolio-chart" id="mockPortfolioChart"></div>
+          </section>
+        </section>
+      </main>
+
+      <section class="news-section">
+        <div class="section-title">
+          <div>
+            <h2>三大分類新聞快照</h2>
+            <div class="hint">從 `macro.md` 與當日策略快照整理成科技 / 金融 / 政治三張卡</div>
+          </div>
+          <div class="badge">來源：現有系統 JSON / macro.md</div>
+        </div>
+        <div class="news-grid" id="newsGrid"></div>
+      </section>
+    </section>
+  </div>
+
+  <script src="./0050_dashboard_data.js"></script>
+  <script src="./0050_dashboard_bootstrap.js"></script>
+  <script>
+    const CATEGORY_ORDER = ["technology", "finance", "politics"];
+    const CATEGORY_LABELS = { technology: "科技", finance: "金融", politics: "政治" };
+    const FALLBACK_HINTS = {
+      technology: "暫無科技快照",
+      finance: "暫無金融快照",
+      politics: "暫無政治快照",
+    };
+
+    const fmtMoney = (value) => Number(value || 0).toLocaleString("zh-Hant", { maximumFractionDigits: 0 });
+    const fmtNum = (value, digits = 2) => Number(value || 0).toLocaleString("zh-Hant", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    const fmtPct = (value, digits = 2) => `${Number(value || 0).toLocaleString("zh-Hant", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
+    const today = new Date().toISOString().slice(0, 10);
+
+    function dateCandidates(days = 14) {
+      const dates = [];
+      for (let i = 0; i <= days; i++) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        dates.push(d.toISOString().slice(0, 10));
+      }
+      return dates;
+    }
+
+    async function fetchJson(path) {
+      try {
+        const res = await fetch(path, { cache: "no-store" });
+        if (!res.ok) return null;
+        return await res.json();
+      } catch {
+        return null;
+      }
+    }
+
+    async function fetchText(path) {
+      try {
+        const res = await fetch(path, { cache: "no-store" });
+        if (!res.ok) return "";
+        return await res.text();
+      } catch {
+        return "";
+      }
+    }
+
+    async function fetchLatestDataManifest() {
+      return await fetchJson("../cache/latest_data.json");
+    }
+
+    async function reloadDashboardBootstrap() {
+      const text = await fetchText("./0050_dashboard_bootstrap.js");
+      if (!text) return null;
+      try {
+        Function(text)();
+      } catch {
+        return null;
+      }
+      return window.ETFDashboardBootstrap || null;
+    }
+
+    async function resolveLatestDataDate() {
+      const manifest = await fetchLatestDataManifest();
+      if (manifest?.latest_date) return manifest.latest_date;
+      return await resolveDataDate();
+    }
+
+    async function fetchNewsSnapshot(date, macroText) {
+      if (window.ETFDashboardBootstrap?.date === date && window.ETFDashboardBootstrap?.parsedMacro) {
+        return window.ETFDashboardBootstrap.parsedMacro;
+      }
+      const snapshot = await fetchJson(`../cache/${date}/0050_news_snapshot.json`);
+      if (snapshot && snapshot.categories) return snapshot;
+      return window.ETFDashboardData.parseMacroNews(macroText || "");
+    }
+
+    async function resolveDataDate() {
+      for (const date of dateCandidates(18)) {
+        const state = await fetchJson(`../cache/trade_execution/${date}/trade_state.json`);
+        if (state) return date;
+        const strategy = await fetchJson(`../cache/${date}/daily_investment_strategy.json`);
+        if (strategy) return date;
+        const macro = await fetchText(`../cache/${date}/macro.md`);
+        if (macro) return date;
+      }
+      return today;
+    }
+
+    async function fetchLatestTradeExecution(date) {
+      for (const slot of ["0930", "1320", "1325"]) {
+        const data = await fetchJson(`../cache/trade_execution/${date}/trade_execution_${slot}.json`);
+        if (data) return data;
+      }
+      return null;
+    }
+
+    function renderSummaryCards(state, execution, strategy, shortTerm) {
+      const cards = [
+        {
+          label: "總資產",
+          value: fmtMoney(state?.equity ?? state?.market_value ?? 0),
+          delta: `現金 ${fmtMoney(state?.cash_balance_after ?? state?.cash_balance ?? 0)}`,
+          tone: "good",
+        },
+        {
+          label: "目前累積損益",
+          value: fmtMoney(state?.cumulative_pnl ?? ((state?.realized_pnl_cum ?? 0) + (state?.unrealized_pnl ?? 0))),
+          delta: `已實現 ${fmtMoney(state?.realized_pnl_cum ?? 0)} / 未實現 ${fmtMoney(state?.unrealized_pnl ?? 0)}`,
+          tone: (Number(state?.cumulative_pnl ?? 0) >= 0 ? "good" : "bad"),
+        },
+        {
+          label: "持有股數",
+          value: Number(state?.shares_held ?? 0).toLocaleString("zh-Hant"),
+          delta: `均價 ${fmtNum(state?.avg_cost ?? 0, 2)} | 市值 ${fmtMoney(state?.market_value ?? 0)}`,
+          tone: "warn",
+        },
+        {
+          label: "今日信號",
+          value: execution?.final_decision?.status ?? strategy?.decision ?? "N/A",
+          delta: shortTerm?.stance ? `短線：${shortTerm.stance}` : `策略：${strategy?.decision ?? "N/A"}`,
+          tone: execution?.final_decision?.status === "NO_TRADE" ? "warn" : "good",
+        },
+      ];
+
+      document.getElementById("summaryCards").innerHTML = cards.map((card) => `
+        <article class="stat ${card.tone}">
+          <div class="label">${card.label}</div>
+          <div class="value">${card.value}</div>
+          <div class="delta">${card.delta}</div>
+        </article>
+      `).join("");
+    }
+
+    function renderHoldings(state, execution) {
+      const rows = [
+        ["交易模式", "0050 直買 / 模擬倉", "依今日策略與即時價調整"],
+        ["開始部位", `${Number(state?.starting_weight ?? 0).toFixed(3)}`, `${Number(state?.starting_shares ?? 0).toLocaleString("zh-Hant")} 股`],
+        ["目前部位", `${Number(state?.current_weight ?? 0).toFixed(3)}`, `${Number(state?.shares_held ?? 0).toLocaleString("zh-Hant")} 股`],
+        ["持有均價", fmtNum(state?.avg_cost ?? 0, 2), `最後成交價 ${fmtNum(state?.last_trade_price ?? state?.last_mark_price ?? 0, 2)}`],
+        ["總資產", fmtMoney(state?.equity ?? 0), `現金 ${fmtMoney(state?.cash_balance_after ?? 0)} + 市值 ${fmtMoney(state?.market_value ?? 0)}`],
+        ["已實現損益", fmtMoney(state?.realized_pnl_cum ?? 0), `未實現 ${fmtMoney(state?.unrealized_pnl ?? 0)} / 累積 ${fmtMoney(state?.cumulative_pnl ?? 0)}`],
+        ["剩餘現金", fmtMoney(state?.cash_balance_after ?? state?.remaining_capital ?? 0), `承接來源 ${state?.carry_over_from ?? "N/A"}`],
+        ["最後 slot", state?.last_slot ?? "N/A", `交易金額 ${fmtMoney(state?.order_notional ?? 0)}`],
+      ];
+
+      document.getElementById("holdingRows").innerHTML = rows.map(([label, value, note]) => `
+        <tr>
+          <td><strong>${label}</strong></td>
+          <td>${value}</td>
+          <td class="muted">${note}</td>
+        </tr>
+      `).join("");
+
+      document.getElementById("holdingNote").textContent = execution?.telegram_message ?
+        `最新訊息：${execution.telegram_message.split("\n")[0].replace(/^\[[^\]]+\]\s*/, "")}` :
+        "尚未取得執行訊息";
+    }
+
+    function renderSystemSnapshot(state, strategy, shortTerm, execution) {
+      const items = [
+        ["日期", state?.date ?? today],
+        ["策略決策", strategy?.decision ?? "N/A"],
+        ["短線立場", shortTerm?.stance ?? "N/A"],
+        ["午盤狀態", execution?.final_decision?.quote_guard?.reason ?? "N/A"],
+      ];
+      document.getElementById("systemSnapshot").innerHTML = items.map(([k, v]) => `
+        <div class="mini-item">
+          <div><strong>${k}</strong></div>
+          <span>${v}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderExecutionList(morning, midday) {
+      const list = [morning, midday].filter(Boolean);
+      if (!list.length) {
+        document.getElementById("executionList").innerHTML = `<div class="empty">暫無執行紀錄</div>`;
+        return;
+      }
+      document.getElementById("executionList").innerHTML = list.map((item) => {
+        const slotLabel = item.slot === "0930" ? "早盤 09:30" : item.slot === "1320" ? "午盤 13:20" : item.slot || "未知 slot";
+        const status = item.final_decision?.status ?? "N/A";
+        const reason = item.final_decision?.quote_guard?.reason ?? item.final_decision?.reason ?? "N/A";
+        const pnl = item.cumulative_pnl ?? (item.trade_state?.cumulative_pnl ?? 0);
+        return `
+          <div class="mini-item">
+            <div>
+              <strong>${slotLabel}</strong><br/>
+              <span>${status}｜${reason}</span>
+            </div>
+            <div style="text-align:right">
+              <strong>${fmtMoney(pnl)}</strong><br/>
+              <span>${fmtMoney(item.trade_state?.order_notional ?? 0)} 下單</span>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderBacktestChart(series) {
+      const container = document.getElementById("backtestChart");
+      if (!series?.length) {
+        container.innerHTML = `<div class="chart-empty">暫無回測資料</div>`;
+        return;
+      }
+
+      const width = 960;
+      const height = 320;
+      const margin = { top: 18, right: 18, bottom: 44, left: 64 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+      const values = series.map((item) => Number(item.portfolioValue));
+      const minValue = Math.min(...values);
+      const maxValue = Math.max(...values);
+      const paddedMin = minValue === maxValue ? minValue - 1 : minValue * 0.98;
+      const paddedMax = minValue === maxValue ? maxValue + 1 : maxValue * 1.02;
+      const range = paddedMax - paddedMin || 1;
+      const xStep = series.length > 1 ? innerWidth / (series.length - 1) : 0;
+      const yFor = (value) => margin.top + (paddedMax - value) / range * innerHeight;
+      const xFor = (index) => margin.left + index * xStep;
+      const line = series.map((item, index) => `${index === 0 ? 'M' : 'L'} ${xFor(index).toFixed(2)} ${yFor(item.portfolioValue).toFixed(2)}`).join(' ');
+      const tickCount = 4;
+      const tickValues = Array.from({ length: tickCount + 1 }, (_, index) => paddedMin + (range * index) / tickCount);
+      const xLabelStep = Math.max(1, Math.ceil(series.length / 5));
+      const recentCount = Math.min(7, series.length);
+      const recentStartIndex = series.length - recentCount;
+      const recentArea = recentCount > 1 ? [
+        `M ${xFor(recentStartIndex).toFixed(2)} ${height - margin.bottom}`,
+        ...series.slice(recentStartIndex).map((item, index) => {
+          const absoluteIndex = recentStartIndex + index;
+          return `L ${xFor(absoluteIndex).toFixed(2)} ${yFor(item.portfolioValue).toFixed(2)}`;
+        }),
+        `L ${xFor(series.length - 1).toFixed(2)} ${height - margin.bottom}`,
+        'Z',
+      ].join(' ') : '';
+
+      const recentSeries = series.slice(recentStartIndex);
+      const highest = series.reduce((best, item, index) => (item.portfolioValue >= best.portfolioValue ? { ...item, index } : best), { ...series[0], index: 0 });
+      const lowest = series.reduce((best, item, index) => (item.portfolioValue <= best.portfolioValue ? { ...item, index } : best), { ...series[0], index: 0 });
+      const marker = (item, label, tone) => {
+        const x = xFor(item.index);
+        const y = yFor(item.portfolioValue);
+        const labelY = Math.max(18, y - 12);
+        return `
+          <g>
+            <circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="5.5" fill="${tone}" stroke="#ffffff" stroke-width="2"></circle>
+            <rect x="${(x + 8).toFixed(2)}" y="${(labelY - 14).toFixed(2)}" width="92" height="20" rx="10" fill="#fff" stroke="${tone}" />
+            <text x="${(x + 54).toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="middle" font-size="11" fill="#2c2a26">${label}</text>
+          </g>
+        `;
+      };
+
+      const yGrid = tickValues.map((value) => {
+        const y = yFor(value);
+        return `
+          <line x1="${margin.left}" y1="${y.toFixed(2)}" x2="${width - margin.right}" y2="${y.toFixed(2)}" stroke="#e7dfd1" stroke-width="1" />
+          <text x="${margin.left - 10}" y="${(y + 4).toFixed(2)}" text-anchor="end" font-size="11" fill="#6c675f">${fmtMoney(value)}</text>
+        `;
+      }).join('');
+
+      const xLabels = series.map((item, index) => {
+        if (index !== 0 && index !== series.length - 1 && index % xLabelStep !== 0) return '';
+        const x = xFor(index);
+        return `
+          <text x="${x.toFixed(2)}" y="${height - 14}" text-anchor="middle" font-size="11" fill="#6c675f">${item.date}</text>
+        `;
+      }).join('');
+
+      const dots = series.map((item, index) => {
+        const x = xFor(index);
+        const y = yFor(item.portfolioValue);
+        return `
+          <g>
+            <circle class="backtest-point" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="3.6" fill="#0f8b8d" data-date="${item.date}" data-value="${item.portfolioValue}">
+              <title>${item.date} / ${fmtMoney(item.portfolioValue)}</title>
+            </circle>
+          </g>
+        `;
+      }).join('');
+
+      const recentBand = recentArea ? `
+        <path d="${recentArea}" fill="rgba(15, 139, 141, 0.10)" stroke="none" />
+      ` : '';
+
+      const highLowMarkers = `
+        ${marker(highest, '最高點', '#177b45')}
+        ${marker(lowest, '最低點', '#b16918')}
+      `;
+
+      const legend = `
+        <div class="backtest-legend">
+          <span><i class="legend-line"></i>趨勢線</span>
+          <span><i class="legend-fill"></i>近 7 日</span>
+          <span><i class="legend-high"></i>最高點</span>
+          <span><i class="legend-low"></i>最低點</span>
+        </div>
+      `;
+
+      container.innerHTML = `
+        <div class="backtest-chart-shell">
+          <div class="backtest-tooltip" id="backtestTooltip" aria-hidden="true"></div>
+          ${legend}
+          <svg class="chart-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="回測趨勢圖">
+            <rect x="0" y="0" width="${width}" height="${height}" rx="16" fill="#ffffff" stroke="#e6dfd2" />
+            ${recentBand}
+            ${yGrid}
+            <path d="${line}" fill="none" stroke="#0f8b8d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            ${dots}
+            ${highLowMarkers}
+            ${xLabels}
+          </svg>
+        </div>
+      `;
+
+      const shell = container.querySelector(".backtest-chart-shell");
+      const tooltip = container.querySelector("#backtestTooltip");
+      const pointNodes = container.querySelectorAll(".backtest-point");
+
+      const hideTooltip = () => {
+        tooltip.classList.remove("is-visible");
+        tooltip.setAttribute("aria-hidden", "true");
+      };
+
+      const showTooltip = (node, event) => {
+        const rect = shell.getBoundingClientRect();
+        const x = (event.clientX || rect.left) - rect.left + 12;
+        const y = (event.clientY || rect.top) - rect.top - 12;
+        tooltip.innerHTML = `
+          <div class="tip-date">${node.dataset.date}</div>
+          <div class="tip-value">${fmtMoney(node.dataset.value)}</div>
+          <div class="tip-meta">portfolio_value_after</div>
+        `;
+        tooltip.style.left = `${Math.max(48, Math.min(x, rect.width - 48))}px`;
+        tooltip.style.top = `${Math.max(48, y)}px`;
+        tooltip.classList.add("is-visible");
+        tooltip.setAttribute("aria-hidden", "false");
+      };
+
+      pointNodes.forEach((node) => {
+        node.addEventListener("pointerenter", (event) => showTooltip(node, event));
+        node.addEventListener("pointermove", (event) => showTooltip(node, event));
+        node.addEventListener("pointerleave", hideTooltip);
+      });
+
+      shell.addEventListener("pointerleave", hideTooltip);
+    }
+
+    function renderMockPortfolioChart(series) {
+      const container = document.getElementById("mockPortfolioChart");
+      if (!series?.length) {
+        container.innerHTML = `<div class="chart-empty">暫無模擬倉資料</div>`;
+        return;
+      }
+
+      const width = 960;
+      const topHeight = 260;
+      const bottomHeight = 180;
+      const topMargin = { top: 16, right: 18, bottom: 40, left: 64 };
+      const bottomMargin = { top: 16, right: 18, bottom: 34, left: 64 };
+      const topInnerWidth = width - topMargin.left - topMargin.right;
+      const topInnerHeight = topHeight - topMargin.top - topMargin.bottom;
+      const bottomInnerWidth = width - bottomMargin.left - bottomMargin.right;
+      const bottomInnerHeight = bottomHeight - bottomMargin.top - bottomMargin.bottom;
+
+      const closeValues = series.map((item) => Number(item.closeValue));
+      const openValues = series.map((item) => Number(item.openValue));
+      const deltaValues = series.map((item) => Number(item.deltaValue));
+      const yMin = Math.min(...openValues, ...closeValues);
+      const yMax = Math.max(...openValues, ...closeValues);
+      const paddedMin = yMin === yMax ? yMin - 1 : yMin * 0.98;
+      const paddedMax = yMin === yMax ? yMax + 1 : yMax * 1.02;
+      const range = paddedMax - paddedMin || 1;
+      const xStep = series.length > 1 ? topInnerWidth / (series.length - 1) : 0;
+      const xFor = (index) => topMargin.left + index * xStep;
+      const yFor = (value) => topMargin.top + (paddedMax - value) / range * topInnerHeight;
+      const line = series.map((item, index) => `${index === 0 ? 'M' : 'L'} ${xFor(index).toFixed(2)} ${yFor(item.closeValue).toFixed(2)}`).join(' ');
+      const xLabelStep = Math.max(1, Math.ceil(series.length / 5));
+
+      const topGrid = Array.from({ length: 5 }, (_, idx) => paddedMin + (range * idx) / 4).map((value) => {
+        const y = yFor(value);
+        return `
+          <line x1="${topMargin.left}" y1="${y.toFixed(2)}" x2="${width - topMargin.right}" y2="${y.toFixed(2)}" stroke="#e7dfd1" stroke-width="1" />
+          <text x="${topMargin.left - 10}" y="${(y + 4).toFixed(2)}" text-anchor="end" font-size="11" fill="#6c675f">${fmtMoney(value)}</text>
+        `;
+      }).join('');
+
+      const topLabels = series.map((item, index) => {
+        if (index !== 0 && index !== series.length - 1 && index % xLabelStep !== 0) return '';
+        return `<text x="${xFor(index).toFixed(2)}" y="${topHeight - 12}" text-anchor="middle" font-size="11" fill="#6c675f">${item.date}</text>`;
+      }).join('');
+
+      const intradaySegments = series.map((item, index) => {
+        const x = xFor(index).toFixed(2);
+        const openY = yFor(item.openValue).toFixed(2);
+        const closeY = yFor(item.closeValue).toFixed(2);
+        const up = item.closeValue >= item.openValue;
+        const stroke = up ? '#177b45' : '#b14a4a';
+        return `
+          <line x1="${x}" y1="${openY}" x2="${x}" y2="${closeY}" stroke="${stroke}" stroke-width="1.5" opacity="0.55" />
+          <circle class="mock-point-open" cx="${x}" cy="${openY}" r="3.1" fill="#9dbfc0"><title>${item.date} 09:30 / ${fmtMoney(item.openValue)}</title></circle>
+          <circle class="mock-point-close" cx="${x}" cy="${closeY}" r="4.0" fill="#0f8b8d"><title>${item.date} 13:20 / ${fmtMoney(item.closeValue)}</title></circle>
+        `;
+      }).join('');
+
+      const deltaMin = Math.min(0, ...deltaValues);
+      const deltaMax = Math.max(0, ...deltaValues);
+      const deltaRange = (deltaMax - deltaMin) || 1;
+      const deltaZeroY = bottomMargin.top + (deltaMax / deltaRange) * bottomInnerHeight;
+      const deltaFor = (value) => bottomMargin.top + (deltaMax - value) / deltaRange * bottomInnerHeight;
+      const deltaBarWidth = Math.max(8, Math.min(28, bottomInnerWidth / Math.max(1, series.length) * 0.55));
+
+      const deltaGrid = Array.from({ length: 5 }, (_, idx) => deltaMin + (deltaRange * idx) / 4).map((value) => {
+        const y = deltaFor(value);
+        return `
+          <line x1="${bottomMargin.left}" y1="${y.toFixed(2)}" x2="${width - bottomMargin.right}" y2="${y.toFixed(2)}" stroke="#e7dfd1" stroke-width="1" />
+          <text x="${bottomMargin.left - 10}" y="${(y + 4).toFixed(2)}" text-anchor="end" font-size="11" fill="#6c675f">${fmtMoney(value)}</text>
+        `;
+      }).join('');
+
+      const deltaBars = series.map((item, index) => {
+        const xCenter = bottomMargin.left + index * (series.length > 1 ? bottomInnerWidth / (series.length - 1) : 0);
+        const x = xCenter - deltaBarWidth / 2;
+        const y = deltaFor(Math.max(item.deltaValue, 0));
+        const zeroY = deltaFor(0);
+        const height = Math.max(1, Math.abs(deltaFor(item.deltaValue) - zeroY));
+        const barY = item.deltaValue >= 0 ? y : zeroY;
+        const color = item.deltaValue >= 0 ? '#177b45' : '#b14a4a';
+        return `
+          <rect x="${x.toFixed(2)}" y="${barY.toFixed(2)}" width="${deltaBarWidth.toFixed(2)}" height="${height.toFixed(2)}" rx="4" fill="${color}" opacity="0.85">
+            <title>${item.date} / ${fmtMoney(item.deltaValue)}</title>
+          </rect>
+        `;
+      }).join('');
+
+      const deltaLabels = series.map((item, index) => {
+        if (index !== 0 && index !== series.length - 1 && index % xLabelStep !== 0) return '';
+        const x = bottomMargin.left + index * (series.length > 1 ? bottomInnerWidth / (series.length - 1) : 0);
+        return `<text x="${x.toFixed(2)}" y="${bottomHeight - 10}" text-anchor="middle" font-size="11" fill="#6c675f">${item.date}</text>`;
+      }).join('');
+
+      const legend = `
+        <div class="mock-legend">
+          <span><i class="legend-open"></i>09:30 開盤資產</span>
+          <span><i class="legend-close"></i>13:20 收盤資產</span>
+          <span><i class="legend-delta-pos"></i>日內增加</span>
+          <span><i class="legend-delta-neg"></i>日內減少</span>
+        </div>
+      `;
+
+      container.innerHTML = `
+        <div class="mock-portfolio-shell">
+          ${legend}
+          <div class="mock-chart-title"><strong>總資產主趨勢</strong><span>每天以 13:20 為主，09:30 作輔助比較</span></div>
+          <svg class="chart-svg" viewBox="0 0 ${width} ${topHeight}" role="img" aria-label="模擬倉總資產主趨勢">
+            <rect x="0" y="0" width="${width}" height="${topHeight}" rx="16" fill="#ffffff" stroke="#e6dfd2" />
+            ${topGrid}
+            <path d="${line}" fill="none" stroke="#0f8b8d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            ${intradaySegments}
+            ${topLabels}
+          </svg>
+          <div class="mock-chart-title" style="margin-top:12px;"><strong>日內變化量</strong><span>13:20 equity - 09:30 equity</span></div>
+          <svg class="chart-svg" viewBox="0 0 ${width} ${bottomHeight}" role="img" aria-label="模擬倉日內變化量">
+            <rect x="0" y="0" width="${width}" height="${bottomHeight}" rx="16" fill="#ffffff" stroke="#e6dfd2" />
+            ${deltaGrid}
+            <line x1="${bottomMargin.left}" y1="${deltaZeroY.toFixed(2)}" x2="${width - bottomMargin.right}" y2="${deltaZeroY.toFixed(2)}" stroke="#9d9486" stroke-width="1.2" />
+            ${deltaBars}
+            ${deltaLabels}
+          </svg>
+        </div>
+      `;
+    }
+
+    function renderNewsCards(parsedMacro, strategy, shortTerm) {
+      const cards = CATEGORY_ORDER.map((category) => {
+        const label = CATEGORY_LABELS[category];
+        const items = ((parsedMacro.categories?.[category] || parsedMacro.items?.[category] || [])).slice(0, 10);
+        const fallback = items.length ? items[0].summary || items[0].title : FALLBACK_HINTS[category];
+        const bullets = items.length ? items : [{ title: FALLBACK_HINTS[category], summary: "" }];
+
+        let footer = "";
+        if (category === "finance" && shortTerm?.suggestion) footer = shortTerm.suggestion;
+        if (category === "technology" && strategy?.strategy) footer = strategy.strategy;
+
+        const strengthClass = (item) => {
+          const strength = Number.isFinite(Number(item?.strength)) ? Number(item.strength) : 0;
+          if (strength >= 3) return "high";
+          if (strength >= 2) return "medium";
+          return "low";
+        };
+
+        const formatStrength = (item) => {
+          const strength = Number.isFinite(Number(item?.strength)) ? Number(item.strength) : 0;
+          return `強度 ${strength}`;
+        };
+
+        const newsLink = (item) => item?.link || '#';
+
+        return `
+          <article class="news-card">
+            <h3>${label}</h3>
+            <div class="news-main">
+              <a class="news-title-link" href="${newsLink(items[0])}" target="_blank" rel="noreferrer noopener">${fallback || FALLBACK_HINTS[category]}</a>
+            </div>
+            <ul class="news-bullets">
+              ${bullets.map((item) => `
+                <li>
+                  <div class="news-meta-row">
+                    <div class="news-item-title"><a class="news-title-link" href="${newsLink(item)}" target="_blank" rel="noreferrer noopener">${item.title || FALLBACK_HINTS[category]}</a></div>
+                    <span class="news-strength ${strengthClass(item)}">${formatStrength(item)}</span>
+                  </div>
+                  <div class="news-item-summary">${item.summary || item.source || ''}</div>
+                </li>
+              `).join("")}
+            </ul>
+            <div class="muted" style="margin-top:12px;font-size:12px;line-height:1.5;">${footer || ""}</div>
+          </article>
+        `;
+      });
+
+      document.getElementById("newsGrid").innerHTML = cards.join("");
+    }
+
+    let dashboardLoaded = false;
+    let currentDataDate = window.ETFDashboardBootstrap?.date || today;
+    let currentDataSignature = window.ETFDashboardBootstrap?.dataManifest?.signature || "";
+
+    async function init() {
+      const bootstrap = window.ETFDashboardBootstrap || null;
+      const manifest = await fetchLatestDataManifest();
+      const bootstrapSourceDates = bootstrap?.sourceDates || {};
+      const bootstrapTradeDate = bootstrapSourceDates.tradeDate || bootstrap?.date || await resolveDataDate();
+      let latestTradeDate = bootstrapTradeDate;
+      let latestNewsDate = bootstrapSourceDates.newsDate || bootstrapTradeDate;
+      let latestStrategyDate = bootstrapSourceDates.strategyDate || bootstrapTradeDate;
+      let latestSignature = bootstrap?.dataManifest?.signature || bootstrap?.dataManifest?.latest_updated_at || bootstrapTradeDate;
+      let activeBootstrap = bootstrap;
+
+      if (manifest?.source_dates?.tradeDate) {
+        latestTradeDate = manifest.source_dates.tradeDate || latestTradeDate;
+        latestNewsDate = manifest.source_dates.newsDate || latestTradeDate;
+        latestStrategyDate = manifest.source_dates.strategyDate || latestTradeDate;
+        latestSignature = manifest.signature || manifest.latest_updated_at || latestSignature;
+
+        if (manifest.source_dates.tradeDate !== bootstrapTradeDate) {
+          const reloaded = await reloadDashboardBootstrap();
+          if (reloaded) activeBootstrap = reloaded;
+        }
+      }
+
+      const shouldUseBootstrap = Boolean(activeBootstrap);
+
+      if (dashboardLoaded && currentDataSignature === latestSignature) {
+        document.getElementById("lastUpdated").textContent = `${new Date().toLocaleString("zh-Hant", { hour12: false })}｜目前已是最新資料 ${currentDataDate}`;
+        return;
+      }
+
+      currentDataDate = latestTradeDate;
+      currentDataSignature = latestSignature;
+      const dataDate = currentDataDate;
+      document.getElementById("dataDate").textContent = dataDate;
+      document.getElementById("lastUpdated").textContent = new Date().toLocaleString("zh-Hant", { hour12: false });
+
+      let state = null;
+      let strategy = null;
+      let shortTerm = null;
+      let morning = null;
+      let midday = null;
+      let parsedMacro = null;
+      let backtestSeries = [];
+      let mockPortfolioSeries = [];
+
+      if (shouldUseBootstrap) {
+        state = activeBootstrap?.state || null;
+        strategy = activeBootstrap?.strategy || null;
+        shortTerm = activeBootstrap?.shortTerm || null;
+        morning = activeBootstrap?.morning || null;
+        midday = activeBootstrap?.midday || null;
+        parsedMacro = activeBootstrap?.parsedMacro || null;
+        backtestSeries = activeBootstrap?.backtestSeries || [];
+        mockPortfolioSeries = activeBootstrap?.mockPortfolioSeries || [];
+      } else {
+        const [fetchedState, fetchedStrategy, fetchedShortTerm, macroText, fetchedMorning] = await Promise.all([
+          fetchJson(`../cache/trade_execution/${latestTradeDate}/trade_state.json`),
+          fetchJson(`../cache/${latestStrategyDate}/daily_investment_strategy.json`),
+          fetchJson(`../cache/${latestStrategyDate}/taiwan_short_term.json`),
+          fetchText(`../cache/${latestNewsDate}/macro.md`),
+          fetchJson(`../cache/trade_execution/${latestTradeDate}/trade_execution_0930.json`)
+        ]);
+        state = fetchedState;
+        strategy = fetchedStrategy;
+        shortTerm = fetchedShortTerm;
+        morning = fetchedMorning;
+        midday = (await fetchJson(`../cache/trade_execution/${latestTradeDate}/trade_execution_1320.json`))
+          || (await fetchJson(`../cache/trade_execution/${latestTradeDate}/trade_execution_1325.json`));
+        parsedMacro = await fetchNewsSnapshot(latestNewsDate, macroText);
+        backtestSeries = activeBootstrap?.backtestSeries || [];
+        mockPortfolioSeries = activeBootstrap?.mockPortfolioSeries || [];
+      }
+
+      const chosenExecution = midday || morning;
+
+      renderSummaryCards(state, chosenExecution, strategy, shortTerm);
+      renderHoldings(state, chosenExecution);
+      renderBacktestChart(backtestSeries);
+      renderMockPortfolioChart(mockPortfolioSeries);
+      renderSystemSnapshot(state, strategy, shortTerm, chosenExecution);
+      renderExecutionList(morning, midday);
+      renderNewsCards(parsedMacro, strategy, shortTerm);
+
+      dashboardLoaded = true;
+    }
+
+    document.getElementById("refreshBtn").addEventListener("click", () => init());
+
+    init();
+  </script>
+</body>
+</html>
