@@ -797,14 +797,21 @@
     }
 
     async function reloadDashboardBootstrap() {
-      const text = await fetchText("./0050_dashboard_bootstrap.js");
-      if (!text) return null;
-      try {
-        Function(text)();
-      } catch {
-        return null;
-      }
-      return window.ETFDashboardBootstrap || null;
+      const previous = window.ETFDashboardBootstrap || null;
+      return await new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = `./0050_dashboard_bootstrap.js?ts=${Date.now()}`;
+        script.async = true;
+        script.onload = () => {
+          script.remove();
+          resolve(window.ETFDashboardBootstrap || previous);
+        };
+        script.onerror = () => {
+          script.remove();
+          resolve(previous);
+        };
+        document.head.appendChild(script);
+      });
     }
 
     async function resolveLatestDataDate() {
@@ -831,7 +838,7 @@
         const macro = await fetchText(`../cache/${date}/macro.md`);
         if (macro) return date;
       }
-      return today;
+      return "";
     }
 
     async function fetchLatestTradeExecution(date) {
@@ -1272,32 +1279,31 @@
     let currentDataDate = window.ETFDashboardBootstrap?.date || today;
     let currentDataSignature = window.ETFDashboardBootstrap?.dataManifest?.signature || "";
 
-    async function init() {
+    async function init(forceRefresh = false) {
       const bootstrap = window.ETFDashboardBootstrap || null;
-      const manifest = await fetchLatestDataManifest();
-      const bootstrapSourceDates = bootstrap?.sourceDates || {};
-      const bootstrapTradeDate = bootstrapSourceDates.tradeDate || bootstrap?.date || await resolveDataDate();
-      let latestTradeDate = bootstrapTradeDate;
-      let latestNewsDate = bootstrapSourceDates.newsDate || bootstrapTradeDate;
-      let latestStrategyDate = bootstrapSourceDates.strategyDate || bootstrapTradeDate;
-      let latestSignature = bootstrap?.dataManifest?.signature || bootstrap?.dataManifest?.latest_updated_at || bootstrapTradeDate;
       let activeBootstrap = bootstrap;
-
-      if (manifest?.source_dates?.tradeDate) {
-        latestTradeDate = manifest.source_dates.tradeDate || latestTradeDate;
-        latestNewsDate = manifest.source_dates.newsDate || latestTradeDate;
-        latestStrategyDate = manifest.source_dates.strategyDate || latestTradeDate;
-        latestSignature = manifest.signature || manifest.latest_updated_at || latestSignature;
-
-        if (manifest.source_dates.tradeDate !== bootstrapTradeDate) {
-          const reloaded = await reloadDashboardBootstrap();
-          if (reloaded) activeBootstrap = reloaded;
-        }
+      if (forceRefresh) {
+        const reloaded = await reloadDashboardBootstrap();
+        if (reloaded) activeBootstrap = reloaded;
       }
 
-      const shouldUseBootstrap = Boolean(activeBootstrap);
+      const detectedDate = await resolveDataDate();
+      const manifest = await fetchLatestDataManifest();
+      const bootstrapSourceDates = activeBootstrap?.sourceDates || {};
+      const manifestSourceDates = manifest?.source_dates || {};
+      const latestTradeDate = detectedDate || manifestSourceDates.tradeDate || bootstrapSourceDates.tradeDate || activeBootstrap?.date || today;
+      const latestNewsDate = manifestSourceDates.newsDate || bootstrapSourceDates.newsDate || latestTradeDate;
+      const latestStrategyDate = manifestSourceDates.strategyDate || bootstrapSourceDates.strategyDate || latestTradeDate;
+      const latestSignature = latestTradeDate;
 
-      if (dashboardLoaded && currentDataSignature === latestSignature) {
+      if (!forceRefresh && activeBootstrap && activeBootstrap?.date !== latestTradeDate) {
+        const reloaded = await reloadDashboardBootstrap();
+        if (reloaded) activeBootstrap = reloaded;
+      }
+
+      const shouldUseBootstrap = Boolean(activeBootstrap && activeBootstrap.date === latestTradeDate);
+
+      if (!forceRefresh && dashboardLoaded && currentDataSignature === latestSignature) {
         document.getElementById("lastUpdated").textContent = `${new Date().toLocaleString("zh-Hant", { hour12: false })}｜目前已是最新資料 ${currentDataDate}`;
         return;
       }
@@ -1343,6 +1349,18 @@
         parsedMacro = await fetchNewsSnapshot(latestNewsDate, macroText);
         backtestSeries = activeBootstrap?.backtestSeries || [];
         mockPortfolioSeries = activeBootstrap?.mockPortfolioSeries || [];
+
+        if (!state && activeBootstrap?.state) {
+          state = activeBootstrap.state;
+          strategy = fetchedStrategy || activeBootstrap.strategy || null;
+          shortTerm = fetchedShortTerm || activeBootstrap.shortTerm || null;
+          morning = fetchedMorning || activeBootstrap.morning || null;
+          midday = midday || activeBootstrap.midday || null;
+          parsedMacro = parsedMacro?.categories ? parsedMacro : (activeBootstrap.parsedMacro || null);
+          backtestSeries = backtestSeries.length ? backtestSeries : (activeBootstrap.backtestSeries || []);
+          mockPortfolioSeries = mockPortfolioSeries.length ? mockPortfolioSeries : (activeBootstrap.mockPortfolioSeries || []);
+          document.getElementById("lastUpdated").textContent = `${new Date().toLocaleString("zh-Hant", { hour12: false })}｜使用已快取資料，請先重建最新 bootstrap`;
+        }
       }
 
       const chosenExecution = midday || morning;
@@ -1358,7 +1376,7 @@
       dashboardLoaded = true;
     }
 
-    document.getElementById("refreshBtn").addEventListener("click", () => init());
+    document.getElementById("refreshBtn").addEventListener("click", () => init(true));
 
     init();
   </script>

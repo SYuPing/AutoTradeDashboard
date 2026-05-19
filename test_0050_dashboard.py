@@ -24,8 +24,13 @@ def test_dashboard_html_exists_and_has_core_sections():
     assert 'name="tradeDate"' not in text
     assert 'id="tradePrice"' not in text
     assert 'id="tradeShares"' not in text
-    assert "bootstrap?.sourceDates" in text
+    assert "activeBootstrap?.sourceDates" in text
     assert "latestTradeDate" in text
+    assert "latestSignature = latestTradeDate" in text
+    assert "forceRefresh" in text
+    assert 'document.createElement("script")' in text
+    assert 'return ""' in text
+    assert "if (!state && activeBootstrap?.state)" in text
     assert "科技" in text
     assert "金融" in text
     assert "政治" in text
