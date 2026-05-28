@@ -1,203 +1,203 @@
 window.ETFDashboardBootstrap = {
-  "date": "2026-05-27",
-  "generated_at": "2026-05-27T05:30:04.740Z",
+  "date": "2026-05-28",
+  "generated_at": "2026-05-28T05:30:02.961Z",
   "sourceDates": {
-    "newsDate": "2026-05-27",
-    "tradeDate": "2026-05-27",
-    "strategyDate": "2026-05-27",
-    "shortTermDate": "2026-05-27"
+    "newsDate": "2026-05-28",
+    "tradeDate": "2026-05-28",
+    "strategyDate": "2026-05-28",
+    "shortTermDate": "2026-05-28"
   },
   "dataManifest": {
-    "latest_date": "2026-05-27",
-    "latest_updated_at": "2026-05-27T05:30:04.299Z",
-    "signature": "1779859804299.5227",
+    "latest_date": "2026-05-28",
+    "latest_updated_at": "2026-05-28T05:30:02.545Z",
+    "signature": "1779946202545.5593",
     "source_dates": {
-      "newsDate": "2026-05-27",
-      "tradeDate": "2026-05-27",
-      "strategyDate": "2026-05-27",
-      "shortTermDate": "2026-05-27"
+      "newsDate": "2026-05-28",
+      "tradeDate": "2026-05-28",
+      "strategyDate": "2026-05-28",
+      "shortTermDate": "2026-05-28"
     },
-    "generated_at": "2026-05-27T05:30:04.740Z"
+    "generated_at": "2026-05-28T05:30:02.961Z"
   },
   "state": {
-    "date": "2026-05-27",
+    "date": "2026-05-28",
     "daily_capital": 100000,
-    "starting_weight": 0.454961,
-    "starting_notional": 45496.1,
-    "starting_shares": 443,
-    "starting_avg_cost": 97.663767,
-    "current_weight": 0.458042,
-    "current_notional": 45804.2,
-    "shares_held": 446,
-    "avg_cost": 97.697643,
-    "cost_basis_total": 43573.15,
-    "market_value": 45804.2,
-    "used_capital": 45804.2,
-    "remaining_capital": 55554.75,
-    "cash_balance_before": 55862.85,
-    "cash_balance_after": 55554.75,
-    "equity": 101358.95,
-    "realized_pnl_cum": -278.8,
-    "unrealized_pnl": 2231.05,
-    "last_trade_price": 102.699997,
-    "last_mark_price": 102.699997,
+    "starting_weight": 0.443205,
+    "starting_notional": 44320.5,
+    "starting_shares": 441,
+    "starting_avg_cost": 97.697643,
+    "current_weight": 0,
+    "current_notional": 0,
+    "shares_held": 0,
+    "avg_cost": 0,
+    "cost_basis_total": 0,
+    "market_value": 0,
+    "used_capital": 0,
+    "remaining_capital": 100394.5,
+    "cash_balance_before": 56074,
+    "cash_balance_after": 100394.5,
+    "equity": 100394.5,
+    "realized_pnl_cum": 987.8,
+    "unrealized_pnl": 0,
+    "last_trade_price": 100.5,
+    "last_mark_price": 100.5,
     "last_slot": "1320",
     "slot_history": [
       {
         "slot": "0930",
-        "timestamp": "2026-05-27 09:30:10",
-        "target_weight": 0.457619,
-        "current_weight_before": 0.378078,
-        "delta_weight": 0.079541,
-        "delta_notional": 7954.1,
+        "timestamp": "2026-05-28 09:30:10",
+        "target_weight": 0.457978,
+        "current_weight_before": 0.463171,
+        "delta_weight": -0.005192,
+        "delta_notional": 519.25,
         "quote_fresh": true,
-        "cash_before": 63816.95,
-        "cash_after": 55862.85,
-        "equity_after": 101624.75,
-        "shares_before": 366,
-        "shares_after": 443,
-        "fill_shares": 77,
-        "avg_cost_after": 97.663767,
-        "realized_pnl_cum": -278.8,
-        "unrealized_pnl": 2496.85,
-        "cumulative_pnl": 2218.05
+        "cash_before": 55554.75,
+        "cash_after": 56074,
+        "equity_after": 101871.85,
+        "shares_before": 446,
+        "shares_after": 441,
+        "fill_shares": -5,
+        "avg_cost_after": 97.697643,
+        "realized_pnl_cum": -248.04,
+        "unrealized_pnl": 2713.19,
+        "cumulative_pnl": 2465.15
       },
       {
         "slot": "1320",
-        "timestamp": "2026-05-27 13:20:10",
-        "target_weight": 0.458042,
-        "current_weight_before": 0.454961,
-        "delta_weight": 0.003081,
-        "delta_notional": 308.1,
+        "timestamp": "2026-05-28 13:20:11",
+        "target_weight": 0,
+        "current_weight_before": 0.443205,
+        "delta_weight": -0.443205,
+        "delta_notional": 44320.5,
         "quote_fresh": true,
-        "cash_before": 55862.85,
-        "cash_after": 55554.75,
-        "equity_after": 101358.95,
-        "shares_before": 443,
-        "shares_after": 446,
-        "fill_shares": 3,
-        "avg_cost_after": 97.697643,
-        "realized_pnl_cum": -278.8,
-        "unrealized_pnl": 2231.05,
-        "cumulative_pnl": 1952.25
+        "cash_before": 56074,
+        "cash_after": 100394.5,
+        "equity_after": 100394.5,
+        "shares_before": 441,
+        "shares_after": 0,
+        "fill_shares": -441,
+        "avg_cost_after": 0,
+        "realized_pnl_cum": 987.8,
+        "unrealized_pnl": 0,
+        "cumulative_pnl": 987.8
       }
     ],
-    "carry_over_from": "cache\\trade_execution\\2026-05-26\\trade_state.json",
-    "order_notional": 308.1,
-    "order_weight": 0.003081,
-    "cumulative_pnl": 1952.25
+    "carry_over_from": "cache\\trade_execution\\2026-05-27\\trade_state.json",
+    "order_notional": 44320.5,
+    "order_weight": -0.443205,
+    "cumulative_pnl": 987.8
   },
   "strategy": {
-    "decision": "降槓桿小部位試單",
-    "strategy": "偏多，但不追價；以 0050 或台積電為主，先用 20%~30% 目標部位試單",
-    "instrument": "0050 優先，其次台積電（2330）",
-    "window": "T+1 ~ T+5",
-    "confidence": "中等偏高",
+    "decision": "",
+    "strategy": "",
+    "instrument": "",
+    "window": "",
+    "confidence": "",
     "execution_points": [
-      "1. **宏觀與市場定價不完全一致，但台股權值面偏多**",
-      "2. **台股開盤策略：偏多但不重倉**",
-      "3. **進場邏輯：不賭全面大漲，只吃權值延續**"
+      "1. **宏觀面偏 risk-off，但台股內部結構偏強**",
+      "2. **跨資產訊號不一致，不能直接重倉**",
+      "3. **台股早盤優先看台積電 ADR 與權值股延續性**"
     ],
     "data_needs": [
-      "台指期夜盤 / 開盤前報價",
-      "台積電現貨與 ADR 價差",
-      "開盤前三大法人籌碼、外資期貨未平倉",
-      "台股早盤 5 分鐘 K 線與量能",
-      "2330、2454、2317 的盤前委買委賣與開盤跳空幅度"
+      "台指期夜盤走勢",
+      "台積電現貨開盤前委買委賣與預估開盤價",
+      "外資/投信盤前籌碼或期貨淨部位",
+      "0050 盤前預估量與前一日成交量比",
+      "台積電、聯發科、鴻海的 5 分鐘級別量價結構"
     ],
     "risk_points": [
-      "若開盤後出現：",
-      "台積電 ADR 利多不延續",
-      "0050 開高走低",
-      "台指期夜盤轉弱",
-      "外資期貨空單增加",
-      "目前最怕的是：**宏觀偏 stagflation，但市場短線先漲後殺**，所以一定要小部位、分批、設停損。",
-      "若你今天只能做一次決策，我會選：**先部署，但只部署部分資金，不滿倉。"
+      "目前宏觀是 **成長放緩 + 防禦偏好**，若早盤台股只是靠 ADR 高開，但量能不跟，容易出現 **開高走低**。",
+      "原油、黃金與美元訊號不完全一致，代表市場仍在消化宏觀敘事，**不適合一次性重倉**。",
+      "若開盤後 30 分鐘內：",
+      "台積電跌破開盤價",
+      "0050 量增但不漲",
+      "聯發科/台達電/鴻海同步轉弱"
     ],
-    "raw_text": "9點前決策\n- 決策：**降槓桿小部位試單**\n- 策略：**偏多，但不追價；以 0050 或台積電為主，先用 20%~30% 目標部位試單**\n- 操作標的：**0050 優先，其次台積電（2330）**\n- 觀察窗：**T+1 ~ T+5**\n- 信心：**中等偏高**\n\n執行重點\n1. **宏觀與市場定價不完全一致，但台股權值面偏多**\n- 新聞主線是停滯性通膨、地緣政治、風險趨避，理論上利多黃金與美債、利空風險資產。\n- 但實際市場已出現**美股上漲、TSM ADR +1.93%、QQQ +1.78%**，代表科技權值股的風險偏好仍在。\n- 台股 0050 breadth 也偏正向：**bullish 21 / bearish 10 / momentum+ 26**，不是弱勢盤。\n\n2. **台股開盤策略：偏多但不重倉**\n- 目前最強的不是全面風險偏好，而是**權值股相對強、科技鏈續強**。\n- 0050 內部強勢股集中在：\n- **聯發科、鴻海、日月光、聯電、台光電、欣興、國巨**\n- 台積電 ADR 走強，對 0050 與台股開盤有正面帶動。\n- 因此我會選擇**開盤後分批小量切入 0050**，若台積電開盤不弱，再加碼到台積電或權值籃子。\n\n3. **進場邏輯：不賭全面大漲，只吃權值延續**\n- 這不是「新聞完全確認」的盤，而是**市場先行反映科技股強勢**。\n- 原油大跌、VIX 仍在 17，代表市場雖有波動，但尚未進入恐慌。\n- 所以策略不是空，也不是滿倉多，而是：\n- **開盤 5~15 分鐘觀察**\n- 若 0050 / 2330 **不破開盤低點、量能正常、台積電站穩**\n- 就做**小部位試單偏多**\n\n補充資料需求\n- **台指期夜盤 / 開盤前報價**\n- **台積電現貨與 ADR 價差**\n- **開盤前三大法人籌碼、外資期貨未平倉**\n- **台股早盤 5 分鐘 K 線與量能**\n- **2330、2454、2317 的盤前委買委賣與開盤跳空幅度**\n\n風險提醒\n- 若開盤後出現：\n- **台積電 ADR 利多不延續**\n- **0050 開高走低**\n- **台指期夜盤轉弱**\n- **外資期貨空單增加**\n則要把試單降為觀察，不追價。\n- 目前最怕的是：**宏觀偏 stagflation，但市場短線先漲後殺**，所以一定要小部位、分批、設停損。\n- 若你今天只能做一次決策，我會選：**先部署，但只部署部分資金，不滿倉。**"
+    "raw_text": "9點前決策\n- **決策：降槓桿小部位試單**\n- **策略：偏多，但只做「台股權值龍頭」的試單，不追價滿倉**\n- **操作標的：0050 或 0050 相關權值股籃子（以台積電、聯發科、台達電、鴻海為核心）**\n- **觀察窗：T+1 ~ T+5**\n- **信心：中等偏高，但不是滿分；適合先小部位進場，不適合激進重倉**\n\n執行重點\n1. **宏觀面偏 risk-off，但台股內部結構偏強**\n- 新聞主線是「歐洲/英國成長放緩 + 能源/通膨尾風險」，理論上對風險資產不利。\n- 但台股 0050 技術面是 **bullish 28 / bearish 11 / momentum+ 28**，結構明顯偏多。\n- 代表：**大盤不是全面轉弱，而是資金仍集中在權值與強勢股。**\n\n2. **跨資產訊號不一致，不能直接重倉**\n- TLT 上漲、工業金屬下跌，符合風險趨避。\n- 但 SPY/QQQ 仍偏強、VIX 下滑，表示市場還沒完全進入恐慌。\n- 這種環境下，**最好的做法不是空手，也不是重押，而是小部位跟隨強勢結構。**\n\n3. **台股早盤優先看台積電 ADR 與權值股延續性**\n- TSM ADR **+2.52%**，對台積電與 0050 是明確正面。\n- 0050 權值焦點中，台積電、聯發科、台達電、鴻海、日月光投控都偏強。\n- 因此早盤若台積電/聯發科開高不失速，可用 **0050 分批試單**；若開高走弱，則不追。\n\n補充資料需求\n若要把「小部位試單」升級成「直接進場偏多」，我還需要以下資料：\n- **台指期夜盤走勢**\n- **台積電現貨開盤前委買委賣與預估開盤價**\n- **外資/投信盤前籌碼或期貨淨部位**\n- **0050 盤前預估量與前一日成交量比**\n- **台積電、聯發科、鴻海的 5 分鐘級別量價結構**\n\n風險提醒\n- 目前宏觀是 **成長放緩 + 防禦偏好**，若早盤台股只是靠 ADR 高開，但量能不跟，容易出現 **開高走低**。\n- 原油、黃金與美元訊號不完全一致，代表市場仍在消化宏觀敘事，**不適合一次性重倉**。\n- 若開盤後 30 分鐘內：\n- 台積電跌破開盤價\n- 0050 量增但不漲\n- 聯發科/台達電/鴻海同步轉弱\n則應停止加碼，甚至把試單降回現金。\n\n**結論：現在可以部署，但只建議「降槓桿小部位試單」，方向偏多，標的以 0050 或權值籃子為主。**"
   },
   "shortTerm": {
     "stance": "降槓桿觀望",
-    "suggestion": "0050 不追價，等回檔分批；權值股以台積電、聯發科、台達電的強勢回測承接為主，不追高；避險端可用 TLT/GLD 觀察性配置，台股部位先降到中性偏低",
+    "suggestion": "0050 不追價，等回檔分批；權值股以強勢龍頭續抱、弱勢權值不接刀；若要操作，偏向 T+1~T+5 的拉回承接，不做盤中追高。",
     "window": "T+1 ~ T+5",
     "resonance": "尚未共振",
     "confidence": "中",
     "focus_names": [
-      "台積電（2330）",
-      "聯發科（2454）",
-      "台達電（2308）／日月光投控（3711）"
+      "台積電(2330)",
+      "聯發科(2454) / 台達電(2308)",
+      "廣達(2382) / 世芯-KY(3661) / 川湖(2059)"
     ],
     "risk_points": [
-      "若原油突然止跌反彈、美元續強、TLT 回落**，代表宏觀避險邏輯失效，台股權值容易被壓回。",
-      "若台積電轉弱且聯發科/台達電同步失速**，0050 會從「權值撐盤」變成「高檔整理」。",
-      "若 0050 內部強勢股只剩少數、breadth 擴散不出來**，代表目前只是局部技術面強，不是全面共振，短線不宜追價。"
+      "若台積電回檔失守、聯發科/台達電漲勢中斷，0050 會從「強勢輪動」轉成「高檔震盪」。",
+      "若美債/美元避險情緒快速反轉，宏觀風險降溫，今天的降槓桿判斷可能失效，0050 會重新轉為偏多。",
+      "若權值股廣度從目前 bullish 28 明顯縮水，或 volume spike 轉成高檔爆量不漲，代表短線上攻力道衰退，應立即降低部位。"
     ],
-    "raw_text": "台股短線結論\n- 立場：**降槓桿觀望**\n- 建議：**0050 不追價，等回檔分批；權值股以台積電、聯發科、台達電的強勢回測承接為主，不追高；避險端可用 TLT/GLD 觀察性配置，台股部位先降到中性偏低**\n- 觀察窗：**T+1 ~ T+5**\n- 共振狀態：**尚未共振**\n- 信心：**中**\n\n權值股焦點\n1. **台積電（2330）**\n- 0050 權重最高，決定指數方向。\n- 目前 5D +2.95%，屬於穩但不算爆發，代表指數有撐、但不是全面加速。\n- 若台積電續強，0050 才有機會維持高檔；若轉弱，整體短線會快速降溫。\n\n2. **聯發科（2454）**\n- 5D +35.18%，是目前最明顯的權值強勢股之一。\n- 代表電子權值內部有資金輪動，不只是台積電單點支撐。\n- 但漲幅已大，T+1~T+5 更適合等整理，不適合追價。\n\n3. **台達電（2308）／日月光投控（3711）**\n- 台達電 5D +22.72%，日月光投控 5D +29.45%，都屬於權值中強勢族群。\n- 這兩檔反映的是 AI 電源、封測/半導體供應鏈的資金延伸，對 0050 結構有支撐。\n- 但 breadth 雖偏多，仍有 10 檔 bearish、12 檔 near low，表示不是全面多頭。\n\n風險提醒\n- **若原油突然止跌反彈、美元續強、TLT 回落**，代表宏觀避險邏輯失效，台股權值容易被壓回。\n- **若台積電轉弱且聯發科/台達電同步失速**，0050 會從「權值撐盤」變成「高檔整理」。\n- **若 0050 內部強勢股只剩少數、breadth 擴散不出來**，代表目前只是局部技術面強，不是全面共振，短線不宜追價。"
+    "raw_text": "台股短線結論\n- 立場：**降槓桿觀望**\n- 建議：**0050 不追價，等回檔分批；權值股以強勢龍頭續抱、弱勢權值不接刀；若要操作，偏向 T+1~T+5 的拉回承接，不做盤中追高。**\n- 觀察窗：**T+1 ~ T+5**\n- 共振狀態：**尚未共振**\n- 信心：**中**\n\n權值股焦點\n1. **台積電(2330)**\n- 0050 權重最高，且 5D +5.26% 仍偏強，是 0050 方向的核心。\n- 但目前宏觀是 Risk-off，代表台股雖有技術支撐，仍不適合在高位追價。\n- 做法：**只看回檔承接，不追突破。**\n\n2. **聯發科(2454) / 台達電(2308)**\n- 兩檔 5D 漲幅都很強，屬於 0050 內部最明顯的多頭推進股。\n- 它們代表的是權值股內部的資金集中度，若續強，0050 才有機會維持相對強勢。\n- 做法：**強勢續抱，但不在急漲後追高。**\n\n3. **廣達(2382) / 世芯-KY(3661) / 川湖(2059)**\n- 這幾檔是目前 0050/權值結構中的相對弱勢點，且有明顯回落。\n- 在宏觀偏空時，弱勢權值通常會先拖累指數節奏。\n- 做法：**先避開，等止跌訊號再說。**\n\n風險提醒\n- **若台積電回檔失守、聯發科/台達電漲勢中斷，0050 會從「強勢輪動」轉成「高檔震盪」。**\n- **若美債/美元避險情緒快速反轉，宏觀風險降溫，今天的降槓桿判斷可能失效，0050 會重新轉為偏多。**\n- **若權值股廣度從目前 bullish 28 明顯縮水，或 volume spike 轉成高檔爆量不漲，代表短線上攻力道衰退，應立即降低部位。**"
   },
   "morning": {
-    "generated_at": "2026-05-27 09:30:10",
+    "generated_at": "2026-05-28 09:30:10",
     "slot": "0930",
     "strategy_output_path": "strategy_output.json",
     "learning_output_path": "learning_output.json",
     "portfolio_value": 100000,
     "quote_fresh": true,
     "quote_attempts": 1,
-    "trade_state_path": "cache\\trade_execution\\2026-05-27\\trade_state.json",
+    "trade_state_path": "cache\\trade_execution\\2026-05-28\\trade_state.json",
     "trade_state": {
-      "date": "2026-05-27",
+      "date": "2026-05-28",
       "daily_capital": 100000,
-      "starting_weight": 0.378078,
-      "starting_notional": 37807.8,
-      "starting_shares": 366,
-      "starting_avg_cost": 96.478001,
-      "current_weight": 0.457619,
-      "current_notional": 45761.9,
-      "shares_held": 443,
-      "avg_cost": 97.663767,
-      "cost_basis_total": 43265.05,
-      "market_value": 45761.9,
-      "used_capital": 45761.9,
-      "remaining_capital": 55862.85,
-      "cash_balance_before": 63816.95,
-      "cash_balance_after": 55862.85,
-      "equity": 101624.75,
-      "realized_pnl_cum": -278.8,
-      "unrealized_pnl": 2496.85,
-      "last_trade_price": 103.300003,
-      "last_mark_price": 103.300003,
+      "starting_weight": 0.463171,
+      "starting_notional": 46317.1,
+      "starting_shares": 446,
+      "starting_avg_cost": 97.697643,
+      "current_weight": 0.457979,
+      "current_notional": 45797.85,
+      "shares_held": 441,
+      "avg_cost": 97.697643,
+      "cost_basis_total": 43084.66,
+      "market_value": 45797.85,
+      "used_capital": 45797.85,
+      "remaining_capital": 56074,
+      "cash_balance_before": 55554.75,
+      "cash_balance_after": 56074,
+      "equity": 101871.85,
+      "realized_pnl_cum": -248.04,
+      "unrealized_pnl": 2713.19,
+      "last_trade_price": 103.849998,
+      "last_mark_price": 103.849998,
       "last_slot": "0930",
       "slot_history": [
         {
           "slot": "0930",
-          "timestamp": "2026-05-27 09:30:10",
-          "target_weight": 0.457619,
-          "current_weight_before": 0.378078,
-          "delta_weight": 0.079541,
-          "delta_notional": 7954.1,
+          "timestamp": "2026-05-28 09:30:10",
+          "target_weight": 0.457978,
+          "current_weight_before": 0.463171,
+          "delta_weight": -0.005192,
+          "delta_notional": 519.25,
           "quote_fresh": true,
-          "cash_before": 63816.95,
-          "cash_after": 55862.85,
-          "equity_after": 101624.75,
-          "shares_before": 366,
-          "shares_after": 443,
-          "fill_shares": 77,
-          "avg_cost_after": 97.663767,
-          "realized_pnl_cum": -278.8,
-          "unrealized_pnl": 2496.85,
-          "cumulative_pnl": 2218.05
+          "cash_before": 55554.75,
+          "cash_after": 56074,
+          "equity_after": 101871.85,
+          "shares_before": 446,
+          "shares_after": 441,
+          "fill_shares": -5,
+          "avg_cost_after": 97.697643,
+          "realized_pnl_cum": -248.04,
+          "unrealized_pnl": 2713.19,
+          "cumulative_pnl": 2465.15
         }
       ],
-      "carry_over_from": "cache\\trade_execution\\2026-05-26\\trade_state.json",
-      "order_notional": 7954.1,
-      "order_weight": 0.079541,
-      "cumulative_pnl": 2218.05
+      "carry_over_from": "cache\\trade_execution\\2026-05-27\\trade_state.json",
+      "order_notional": 519.25,
+      "order_weight": -0.005192,
+      "cumulative_pnl": 2465.15
     },
     "base_decision": {
-      "date": "2026-05-27",
+      "date": "2026-05-28",
       "final_positions": {
         "0050.TW": 0.458333,
+        "CASH": 0.45,
         "TLT": 0.091667,
-        "CASH": 0.45
+        "GLD": 0
       },
       "exposure": 0.55,
       "status": "EXECUTE",
@@ -231,26 +231,27 @@ window.ETFDashboardBootstrap = {
         ],
         "monthly_target_return": 0.05,
         "monthly_max_drawdown": -0.03,
-        "current_month_return": 0.0656,
+        "current_month_return": 0.0727,
         "current_month_drawdown": -0.0158,
         "monthly_mode": "ON_TRACK"
       }
     },
     "final_decision": {
-      "date": "2026-05-27",
+      "date": "2026-05-28",
       "final_positions": {
-        "0050.TW": 0.457619,
+        "0050.TW": 0.457978,
+        "CASH": 0.542022,
         "TLT": 0.091667,
-        "CASH": 0.542381
+        "GLD": 0
       },
-      "exposure": 0.457619,
+      "exposure": 0.457978,
       "status": "EXECUTE",
       "reason": "CONSTRAINED_BY_LEARNING_OUTPUT",
       "exposure_breakdown": {
         "long": 0.55,
         "short": 0
       },
-      "leverage_ratio": 0.457619,
+      "leverage_ratio": 0.457978,
       "estimated_transaction_cost": 0.00055,
       "strategy": "A",
       "regime": "MIXED",
@@ -275,19 +276,17 @@ window.ETFDashboardBootstrap = {
         ],
         "monthly_target_return": 0.05,
         "monthly_max_drawdown": -0.03,
-        "current_month_return": 0.0656,
+        "current_month_return": 0.0727,
         "current_month_drawdown": -0.0158,
         "monthly_mode": "ON_TRACK"
       },
       "quote_guard": {
         "slot": "0930",
-        "core_change_pct": 2.4802,
-        "focus_positive_count": 5,
+        "core_change_pct": 3.7463,
+        "focus_positive_count": 3,
         "focus_positive": [
-          "2308.TW",
           "2317.TW",
           "2330.TW",
-          "2345.TW",
           "2382.TW"
         ],
         "action": "EXECUTE",
@@ -296,257 +295,258 @@ window.ETFDashboardBootstrap = {
       },
       "quote_snapshot": {
         "0050.TW": {
-          "last_price": 103.30000305175781,
-          "prev_close": 100.80000305175781,
-          "change_pct": 2.4802,
-          "as_of": "2026-05-27T01:10:00"
+          "last_price": 103.8499984741211,
+          "prev_close": 100.0999984741211,
+          "change_pct": 3.7463,
+          "as_of": "2026-05-28T01:10:00"
         },
         "2308.TW": {
-          "last_price": 2585,
-          "prev_close": 2350,
-          "change_pct": 10,
-          "as_of": "2026-05-27T01:10:00"
+          "last_price": 2500,
+          "prev_close": 2520,
+          "change_pct": -0.7937,
+          "as_of": "2026-05-28T01:10:00"
         },
         "2317.TW": {
-          "last_price": 266.5,
-          "prev_close": 259,
-          "change_pct": 2.8958,
-          "as_of": "2026-05-27T01:10:00"
+          "last_price": 267.5,
+          "prev_close": 264,
+          "change_pct": 1.3258,
+          "as_of": "2026-05-28T01:10:00"
         },
         "2330.TW": {
-          "last_price": 2310,
-          "prev_close": 2270,
-          "change_pct": 1.7621,
-          "as_of": "2026-05-27T01:10:00"
+          "last_price": 2345,
+          "prev_close": 2300,
+          "change_pct": 1.9565,
+          "as_of": "2026-05-28T01:10:00"
         },
         "2345.TW": {
-          "last_price": 2645,
+          "last_price": 2545,
           "prev_close": 2620,
-          "change_pct": 0.9542,
-          "as_of": "2026-05-27T01:09:00"
+          "change_pct": -2.8626,
+          "as_of": "2026-05-28T01:09:00"
         },
         "2382.TW": {
-          "last_price": 320,
-          "prev_close": 316.5,
-          "change_pct": 1.1058,
-          "as_of": "2026-05-27T01:10:00"
+          "last_price": 316.5,
+          "prev_close": 312,
+          "change_pct": 1.4423,
+          "as_of": "2026-05-28T01:10:00"
         },
         "USO": {
-          "last_price": 137.02000427246094,
-          "prev_close": 140.9199981689453,
-          "change_pct": -2.7675,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 131.02000427246094,
+          "prev_close": 137,
+          "change_pct": -4.365,
+          "as_of": "2026-05-27T19:59:00"
         },
         "GLD": {
-          "last_price": 413.9549865722656,
-          "prev_close": 413.82000732421875,
-          "change_pct": 0.0326,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 408.5199890136719,
+          "prev_close": 414,
+          "change_pct": -1.3237,
+          "as_of": "2026-05-27T19:59:00"
         },
         "TLT": {
-          "last_price": 85.08000183105469,
-          "prev_close": 84.68000030517578,
-          "change_pct": 0.4724,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 85.29000091552734,
+          "prev_close": 85.0999984741211,
+          "change_pct": 0.2233,
+          "as_of": "2026-05-27T19:59:00"
         },
         "QQQ": {
-          "last_price": 730.2150268554688,
-          "prev_close": 717.5399780273438,
-          "change_pct": 1.7665,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 729.489990234375,
+          "prev_close": 730.280029296875,
+          "change_pct": -0.1082,
+          "as_of": "2026-05-27T19:59:00"
         },
         "SPY": {
           "last_price": 750.469970703125,
-          "prev_close": 745.6400146484375,
-          "change_pct": 0.6478,
-          "as_of": "2026-05-26T19:59:00"
+          "prev_close": 750.5900268554688,
+          "change_pct": -0.016,
+          "as_of": "2026-05-27T19:59:00"
         },
         "UUP": {
-          "last_price": 27.7549991607666,
-          "prev_close": 27.770000457763672,
-          "change_pct": -0.054,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 27.764999389648438,
+          "prev_close": 27.75,
+          "change_pct": 0.0541,
+          "as_of": "2026-05-27T19:59:00"
         }
       },
       "slot": "0930"
     },
     "quotes": {
       "0050.TW": {
-        "last_price": 103.30000305175781,
-        "prev_close": 100.80000305175781,
-        "change_pct": 2.4802,
-        "as_of": "2026-05-27T01:10:00"
+        "last_price": 103.8499984741211,
+        "prev_close": 100.0999984741211,
+        "change_pct": 3.7463,
+        "as_of": "2026-05-28T01:10:00"
       },
       "2308.TW": {
-        "last_price": 2585,
-        "prev_close": 2350,
-        "change_pct": 10,
-        "as_of": "2026-05-27T01:10:00"
+        "last_price": 2500,
+        "prev_close": 2520,
+        "change_pct": -0.7937,
+        "as_of": "2026-05-28T01:10:00"
       },
       "2317.TW": {
-        "last_price": 266.5,
-        "prev_close": 259,
-        "change_pct": 2.8958,
-        "as_of": "2026-05-27T01:10:00"
+        "last_price": 267.5,
+        "prev_close": 264,
+        "change_pct": 1.3258,
+        "as_of": "2026-05-28T01:10:00"
       },
       "2330.TW": {
-        "last_price": 2310,
-        "prev_close": 2270,
-        "change_pct": 1.7621,
-        "as_of": "2026-05-27T01:10:00"
+        "last_price": 2345,
+        "prev_close": 2300,
+        "change_pct": 1.9565,
+        "as_of": "2026-05-28T01:10:00"
       },
       "2345.TW": {
-        "last_price": 2645,
+        "last_price": 2545,
         "prev_close": 2620,
-        "change_pct": 0.9542,
-        "as_of": "2026-05-27T01:09:00"
+        "change_pct": -2.8626,
+        "as_of": "2026-05-28T01:09:00"
       },
       "2382.TW": {
-        "last_price": 320,
-        "prev_close": 316.5,
-        "change_pct": 1.1058,
-        "as_of": "2026-05-27T01:10:00"
+        "last_price": 316.5,
+        "prev_close": 312,
+        "change_pct": 1.4423,
+        "as_of": "2026-05-28T01:10:00"
       },
       "USO": {
-        "last_price": 137.02000427246094,
-        "prev_close": 140.9199981689453,
-        "change_pct": -2.7675,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 131.02000427246094,
+        "prev_close": 137,
+        "change_pct": -4.365,
+        "as_of": "2026-05-27T19:59:00"
       },
       "GLD": {
-        "last_price": 413.9549865722656,
-        "prev_close": 413.82000732421875,
-        "change_pct": 0.0326,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 408.5199890136719,
+        "prev_close": 414,
+        "change_pct": -1.3237,
+        "as_of": "2026-05-27T19:59:00"
       },
       "TLT": {
-        "last_price": 85.08000183105469,
-        "prev_close": 84.68000030517578,
-        "change_pct": 0.4724,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 85.29000091552734,
+        "prev_close": 85.0999984741211,
+        "change_pct": 0.2233,
+        "as_of": "2026-05-27T19:59:00"
       },
       "QQQ": {
-        "last_price": 730.2150268554688,
-        "prev_close": 717.5399780273438,
-        "change_pct": 1.7665,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 729.489990234375,
+        "prev_close": 730.280029296875,
+        "change_pct": -0.1082,
+        "as_of": "2026-05-27T19:59:00"
       },
       "SPY": {
         "last_price": 750.469970703125,
-        "prev_close": 745.6400146484375,
-        "change_pct": 0.6478,
-        "as_of": "2026-05-26T19:59:00"
+        "prev_close": 750.5900268554688,
+        "change_pct": -0.016,
+        "as_of": "2026-05-27T19:59:00"
       },
       "UUP": {
-        "last_price": 27.7549991607666,
-        "prev_close": 27.770000457763672,
-        "change_pct": -0.054,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 27.764999389648438,
+        "prev_close": 27.75,
+        "change_pct": 0.0541,
+        "as_of": "2026-05-27T19:59:00"
       }
     },
     "trade_plan": [
       {
         "asset": "0050.TW",
         "parent_asset": "",
-        "side": "買進",
-        "price": 103.3,
-        "shares": 77,
-        "notional": 7954.1,
-        "weight": 0.079541,
+        "side": "賣出",
+        "price": 103.85,
+        "shares": 5,
+        "notional": 519.25,
+        "weight": -0.005192,
         "split_ratio": 0,
         "is_proxy_split": false
       }
     ],
     "trade_plan_mode": "core_only",
-    "cumulative_pnl": 2218.05,
-    "equity": 101624.75,
-    "telegram_message": "[0930 執行結果]\n策略：A\n動作：EXECUTE\n原因：CONSTRAINED_BY_LEARNING_OUTPUT\n執行模式：0050直買\n執行本金：100,000\n今日起始：0.378\n起始股數：366\n今日已用：45,762\n今日剩餘：55,863\n下單金額：7,954\n現金前後：63,817 -> 55,863\n總資產：101,625\n持有股數：443\n持有均價：97.66\n已實現損益：-279\n未實現損益：2,497\n目前累積損益：2,218\n0050部位：0.458\n現金：0.542\n0050即時：+2.48% @ 2026-05-27T01:10:00\n承接來源：cache\\trade_execution\\2026-05-26\\trade_state.json\n交易明細：\n- 買進 0050.TW @ 103 × 77 股（約 7,954）\n參考資產：USO:-2.77% / GLD:+0.03% / TLT:+0.47% / QQQ:+1.77%\n目標曝險：0.458\nquote判斷：EXECUTE | MORNING_CONFIRM_OK",
+    "cumulative_pnl": 2465.15,
+    "equity": 101871.85,
+    "telegram_message": "[0930 執行結果]\n策略：A\n動作：EXECUTE\n原因：CONSTRAINED_BY_LEARNING_OUTPUT\n執行模式：0050直買\n執行本金：100,000\n今日起始：0.463\n起始股數：446\n今日已用：45,798\n今日剩餘：56,074\n下單金額：519\n現金前後：55,555 -> 56,074\n總資產：101,872\n持有股數：441\n持有均價：97.70\n已實現損益：-248\n未實現損益：2,713\n目前累積損益：2,465\n0050部位：0.458\n現金：0.542\n0050即時：+3.75% @ 2026-05-28T01:10:00\n承接來源：cache\\trade_execution\\2026-05-27\\trade_state.json\n交易明細：\n- 賣出 0050.TW @ 104 × 5 股（約 519）\n參考資產：USO:-4.37% / GLD:-1.32% / TLT:+0.22% / QQQ:-0.11%\n目標曝險：0.458\nquote判斷：EXECUTE | MORNING_CONFIRM_OK",
     "telegram_sent": true,
     "telegram_error": ""
   },
   "midday": {
-    "generated_at": "2026-05-27 13:20:10",
+    "generated_at": "2026-05-28 13:20:11",
     "slot": "1320",
     "strategy_output_path": "strategy_output.json",
     "learning_output_path": "learning_output.json",
     "portfolio_value": 100000,
     "quote_fresh": true,
     "quote_attempts": 1,
-    "trade_state_path": "cache\\trade_execution\\2026-05-27\\trade_state.json",
+    "trade_state_path": "cache\\trade_execution\\2026-05-28\\trade_state.json",
     "trade_state": {
-      "date": "2026-05-27",
+      "date": "2026-05-28",
       "daily_capital": 100000,
-      "starting_weight": 0.454961,
-      "starting_notional": 45496.1,
-      "starting_shares": 443,
-      "starting_avg_cost": 97.663767,
-      "current_weight": 0.458042,
-      "current_notional": 45804.2,
-      "shares_held": 446,
-      "avg_cost": 97.697643,
-      "cost_basis_total": 43573.15,
-      "market_value": 45804.2,
-      "used_capital": 45804.2,
-      "remaining_capital": 55554.75,
-      "cash_balance_before": 55862.85,
-      "cash_balance_after": 55554.75,
-      "equity": 101358.95,
-      "realized_pnl_cum": -278.8,
-      "unrealized_pnl": 2231.05,
-      "last_trade_price": 102.699997,
-      "last_mark_price": 102.699997,
+      "starting_weight": 0.443205,
+      "starting_notional": 44320.5,
+      "starting_shares": 441,
+      "starting_avg_cost": 97.697643,
+      "current_weight": 0,
+      "current_notional": 0,
+      "shares_held": 0,
+      "avg_cost": 0,
+      "cost_basis_total": 0,
+      "market_value": 0,
+      "used_capital": 0,
+      "remaining_capital": 100394.5,
+      "cash_balance_before": 56074,
+      "cash_balance_after": 100394.5,
+      "equity": 100394.5,
+      "realized_pnl_cum": 987.8,
+      "unrealized_pnl": 0,
+      "last_trade_price": 100.5,
+      "last_mark_price": 100.5,
       "last_slot": "1320",
       "slot_history": [
         {
           "slot": "0930",
-          "timestamp": "2026-05-27 09:30:10",
-          "target_weight": 0.457619,
-          "current_weight_before": 0.378078,
-          "delta_weight": 0.079541,
-          "delta_notional": 7954.1,
+          "timestamp": "2026-05-28 09:30:10",
+          "target_weight": 0.457978,
+          "current_weight_before": 0.463171,
+          "delta_weight": -0.005192,
+          "delta_notional": 519.25,
           "quote_fresh": true,
-          "cash_before": 63816.95,
-          "cash_after": 55862.85,
-          "equity_after": 101624.75,
-          "shares_before": 366,
-          "shares_after": 443,
-          "fill_shares": 77,
-          "avg_cost_after": 97.663767,
-          "realized_pnl_cum": -278.8,
-          "unrealized_pnl": 2496.85,
-          "cumulative_pnl": 2218.05
+          "cash_before": 55554.75,
+          "cash_after": 56074,
+          "equity_after": 101871.85,
+          "shares_before": 446,
+          "shares_after": 441,
+          "fill_shares": -5,
+          "avg_cost_after": 97.697643,
+          "realized_pnl_cum": -248.04,
+          "unrealized_pnl": 2713.19,
+          "cumulative_pnl": 2465.15
         },
         {
           "slot": "1320",
-          "timestamp": "2026-05-27 13:20:10",
-          "target_weight": 0.458042,
-          "current_weight_before": 0.454961,
-          "delta_weight": 0.003081,
-          "delta_notional": 308.1,
+          "timestamp": "2026-05-28 13:20:11",
+          "target_weight": 0,
+          "current_weight_before": 0.443205,
+          "delta_weight": -0.443205,
+          "delta_notional": 44320.5,
           "quote_fresh": true,
-          "cash_before": 55862.85,
-          "cash_after": 55554.75,
-          "equity_after": 101358.95,
-          "shares_before": 443,
-          "shares_after": 446,
-          "fill_shares": 3,
-          "avg_cost_after": 97.697643,
-          "realized_pnl_cum": -278.8,
-          "unrealized_pnl": 2231.05,
-          "cumulative_pnl": 1952.25
+          "cash_before": 56074,
+          "cash_after": 100394.5,
+          "equity_after": 100394.5,
+          "shares_before": 441,
+          "shares_after": 0,
+          "fill_shares": -441,
+          "avg_cost_after": 0,
+          "realized_pnl_cum": 987.8,
+          "unrealized_pnl": 0,
+          "cumulative_pnl": 987.8
         }
       ],
-      "carry_over_from": "cache\\trade_execution\\2026-05-26\\trade_state.json",
-      "order_notional": 308.1,
-      "order_weight": 0.003081,
-      "cumulative_pnl": 1952.25
+      "carry_over_from": "cache\\trade_execution\\2026-05-27\\trade_state.json",
+      "order_notional": 44320.5,
+      "order_weight": -0.443205,
+      "cumulative_pnl": 987.8
     },
     "base_decision": {
-      "date": "2026-05-27",
+      "date": "2026-05-28",
       "final_positions": {
         "0050.TW": 0.458333,
+        "CASH": 0.45,
         "TLT": 0.091667,
-        "CASH": 0.45
+        "GLD": 0
       },
       "exposure": 0.55,
       "status": "EXECUTE",
@@ -580,26 +580,27 @@ window.ETFDashboardBootstrap = {
         ],
         "monthly_target_return": 0.05,
         "monthly_max_drawdown": -0.03,
-        "current_month_return": 0.0656,
+        "current_month_return": 0.0727,
         "current_month_drawdown": -0.0158,
         "monthly_mode": "ON_TRACK"
       }
     },
     "final_decision": {
-      "date": "2026-05-27",
+      "date": "2026-05-28",
       "final_positions": {
-        "0050.TW": 0.458042,
-        "TLT": 0.091667,
-        "CASH": 0.541958
+        "0050.TW": 0,
+        "CASH": 1,
+        "TLT": 0,
+        "GLD": 0
       },
-      "exposure": 0.458042,
-      "status": "EXECUTE",
+      "exposure": 0,
+      "status": "NO_TRADE",
       "reason": "CONSTRAINED_BY_LEARNING_OUTPUT",
       "exposure_breakdown": {
         "long": 0.55,
         "short": 0
       },
-      "leverage_ratio": 0.458042,
+      "leverage_ratio": 0,
       "estimated_transaction_cost": 0.00055,
       "strategy": "A",
       "regime": "MIXED",
@@ -624,377 +625,372 @@ window.ETFDashboardBootstrap = {
         ],
         "monthly_target_return": 0.05,
         "monthly_max_drawdown": -0.03,
-        "current_month_return": 0.0656,
+        "current_month_return": 0.0727,
         "current_month_drawdown": -0.0158,
         "monthly_mode": "ON_TRACK"
       },
       "quote_guard": {
         "slot": "1320",
-        "core_change_pct": 2.5974,
-        "focus_positive_count": 4,
-        "focus_positive": [
-          "2308.TW",
-          "2317.TW",
-          "2330.TW",
-          "2345.TW"
-        ],
-        "action": "EXECUTE",
-        "reason": "MIDDAY_CONFIRM_OK",
-        "target_exposure": 0.35
+        "core_change_pct": -1.999,
+        "focus_positive_count": 0,
+        "focus_positive": [],
+        "action": "CANCEL",
+        "reason": "MIDDAY_CORE_BREAKDOWN",
+        "target_exposure": 0
       },
       "quote_snapshot": {
         "0050.TW": {
-          "last_price": 102.69999694824219,
-          "prev_close": 100.0999984741211,
-          "change_pct": 2.5974,
-          "as_of": "2026-05-27T05:00:00"
+          "last_price": 100.5,
+          "prev_close": 102.55000305175781,
+          "change_pct": -1.999,
+          "as_of": "2026-05-28T05:00:00"
         },
         "2308.TW": {
-          "last_price": 2535,
-          "prev_close": 2350,
-          "change_pct": 7.8723,
-          "as_of": "2026-05-27T05:00:00"
+          "last_price": 2385,
+          "prev_close": 2520,
+          "change_pct": -5.3571,
+          "as_of": "2026-05-28T05:00:00"
         },
         "2317.TW": {
-          "last_price": 264,
-          "prev_close": 259,
-          "change_pct": 1.9305,
-          "as_of": "2026-05-27T05:00:00"
+          "last_price": 261,
+          "prev_close": 264,
+          "change_pct": -1.1364,
+          "as_of": "2026-05-28T05:00:00"
         },
         "2330.TW": {
-          "last_price": 2310,
-          "prev_close": 2270,
-          "change_pct": 1.7621,
-          "as_of": "2026-05-27T05:00:00"
+          "last_price": 2280,
+          "prev_close": 2300,
+          "change_pct": -0.8696,
+          "as_of": "2026-05-28T05:00:00"
         },
         "2345.TW": {
-          "last_price": 2635,
+          "last_price": 2405,
           "prev_close": 2620,
-          "change_pct": 0.5725,
-          "as_of": "2026-05-27T04:59:00"
+          "change_pct": -8.2061,
+          "as_of": "2026-05-28T05:00:00"
         },
         "2382.TW": {
-          "last_price": 316,
-          "prev_close": 316.5,
-          "change_pct": -0.158,
-          "as_of": "2026-05-27T05:00:00"
+          "last_price": 311,
+          "prev_close": 312,
+          "change_pct": -0.3205,
+          "as_of": "2026-05-28T05:00:00"
         },
         "USO": {
-          "last_price": 137.02000427246094,
-          "prev_close": 140.9199981689453,
-          "change_pct": -2.7675,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 131.02000427246094,
+          "prev_close": 137,
+          "change_pct": -4.365,
+          "as_of": "2026-05-27T19:59:00"
         },
         "GLD": {
-          "last_price": 413.9549865722656,
-          "prev_close": 413.82000732421875,
-          "change_pct": 0.0326,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 408.5199890136719,
+          "prev_close": 414,
+          "change_pct": -1.3237,
+          "as_of": "2026-05-27T19:59:00"
         },
         "TLT": {
-          "last_price": 85.08000183105469,
-          "prev_close": 84.68000030517578,
-          "change_pct": 0.4724,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 85.29000091552734,
+          "prev_close": 85.0999984741211,
+          "change_pct": 0.2233,
+          "as_of": "2026-05-27T19:59:00"
         },
         "QQQ": {
-          "last_price": 730.2150268554688,
-          "prev_close": 717.5399780273438,
-          "change_pct": 1.7665,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 729.489990234375,
+          "prev_close": 730.280029296875,
+          "change_pct": -0.1082,
+          "as_of": "2026-05-27T19:59:00"
         },
         "SPY": {
           "last_price": 750.469970703125,
-          "prev_close": 745.6400146484375,
-          "change_pct": 0.6478,
-          "as_of": "2026-05-26T19:59:00"
+          "prev_close": 750.5900268554688,
+          "change_pct": -0.016,
+          "as_of": "2026-05-27T19:59:00"
         },
         "UUP": {
-          "last_price": 27.7549991607666,
-          "prev_close": 27.770000457763672,
-          "change_pct": -0.054,
-          "as_of": "2026-05-26T19:59:00"
+          "last_price": 27.764999389648438,
+          "prev_close": 27.75,
+          "change_pct": 0.0541,
+          "as_of": "2026-05-27T19:59:00"
         }
       },
       "slot": "1320"
     },
     "quotes": {
       "0050.TW": {
-        "last_price": 102.69999694824219,
-        "prev_close": 100.0999984741211,
-        "change_pct": 2.5974,
-        "as_of": "2026-05-27T05:00:00"
+        "last_price": 100.5,
+        "prev_close": 102.55000305175781,
+        "change_pct": -1.999,
+        "as_of": "2026-05-28T05:00:00"
       },
       "2308.TW": {
-        "last_price": 2535,
-        "prev_close": 2350,
-        "change_pct": 7.8723,
-        "as_of": "2026-05-27T05:00:00"
+        "last_price": 2385,
+        "prev_close": 2520,
+        "change_pct": -5.3571,
+        "as_of": "2026-05-28T05:00:00"
       },
       "2317.TW": {
-        "last_price": 264,
-        "prev_close": 259,
-        "change_pct": 1.9305,
-        "as_of": "2026-05-27T05:00:00"
+        "last_price": 261,
+        "prev_close": 264,
+        "change_pct": -1.1364,
+        "as_of": "2026-05-28T05:00:00"
       },
       "2330.TW": {
-        "last_price": 2310,
-        "prev_close": 2270,
-        "change_pct": 1.7621,
-        "as_of": "2026-05-27T05:00:00"
+        "last_price": 2280,
+        "prev_close": 2300,
+        "change_pct": -0.8696,
+        "as_of": "2026-05-28T05:00:00"
       },
       "2345.TW": {
-        "last_price": 2635,
+        "last_price": 2405,
         "prev_close": 2620,
-        "change_pct": 0.5725,
-        "as_of": "2026-05-27T04:59:00"
+        "change_pct": -8.2061,
+        "as_of": "2026-05-28T05:00:00"
       },
       "2382.TW": {
-        "last_price": 316,
-        "prev_close": 316.5,
-        "change_pct": -0.158,
-        "as_of": "2026-05-27T05:00:00"
+        "last_price": 311,
+        "prev_close": 312,
+        "change_pct": -0.3205,
+        "as_of": "2026-05-28T05:00:00"
       },
       "USO": {
-        "last_price": 137.02000427246094,
-        "prev_close": 140.9199981689453,
-        "change_pct": -2.7675,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 131.02000427246094,
+        "prev_close": 137,
+        "change_pct": -4.365,
+        "as_of": "2026-05-27T19:59:00"
       },
       "GLD": {
-        "last_price": 413.9549865722656,
-        "prev_close": 413.82000732421875,
-        "change_pct": 0.0326,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 408.5199890136719,
+        "prev_close": 414,
+        "change_pct": -1.3237,
+        "as_of": "2026-05-27T19:59:00"
       },
       "TLT": {
-        "last_price": 85.08000183105469,
-        "prev_close": 84.68000030517578,
-        "change_pct": 0.4724,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 85.29000091552734,
+        "prev_close": 85.0999984741211,
+        "change_pct": 0.2233,
+        "as_of": "2026-05-27T19:59:00"
       },
       "QQQ": {
-        "last_price": 730.2150268554688,
-        "prev_close": 717.5399780273438,
-        "change_pct": 1.7665,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 729.489990234375,
+        "prev_close": 730.280029296875,
+        "change_pct": -0.1082,
+        "as_of": "2026-05-27T19:59:00"
       },
       "SPY": {
         "last_price": 750.469970703125,
-        "prev_close": 745.6400146484375,
-        "change_pct": 0.6478,
-        "as_of": "2026-05-26T19:59:00"
+        "prev_close": 750.5900268554688,
+        "change_pct": -0.016,
+        "as_of": "2026-05-27T19:59:00"
       },
       "UUP": {
-        "last_price": 27.7549991607666,
-        "prev_close": 27.770000457763672,
-        "change_pct": -0.054,
-        "as_of": "2026-05-26T19:59:00"
+        "last_price": 27.764999389648438,
+        "prev_close": 27.75,
+        "change_pct": 0.0541,
+        "as_of": "2026-05-27T19:59:00"
       }
     },
     "trade_plan": [
       {
         "asset": "0050.TW",
         "parent_asset": "",
-        "side": "買進",
-        "price": 102.7,
-        "shares": 3,
-        "notional": 308.1,
-        "weight": 0.003081,
+        "side": "賣出",
+        "price": 100.5,
+        "shares": 441,
+        "notional": 44320.5,
+        "weight": -0.443205,
         "split_ratio": 0,
         "is_proxy_split": false
       }
     ],
     "trade_plan_mode": "core_only",
-    "cumulative_pnl": 1952.25,
-    "equity": 101358.95,
-    "telegram_message": "[1320 執行結果]\n策略：A\n動作：EXECUTE\n原因：CONSTRAINED_BY_LEARNING_OUTPUT\n執行模式：0050直買\n執行本金：100,000\n今日起始：0.455\n起始股數：443\n今日已用：45,804\n今日剩餘：55,555\n下單金額：308\n現金前後：55,863 -> 55,555\n總資產：101,359\n持有股數：446\n持有均價：97.70\n已實現損益：-279\n未實現損益：2,231\n目前累積損益：1,952\n0050部位：0.458\n現金：0.542\n0050即時：+2.60% @ 2026-05-27T05:00:00\n承接來源：cache\\trade_execution\\2026-05-26\\trade_state.json\n交易明細：\n- 買進 0050.TW @ 103 × 3 股（約 308）\n參考資產：USO:-2.77% / GLD:+0.03% / TLT:+0.47% / QQQ:+1.77%\n目標曝險：0.458\nquote判斷：EXECUTE | MIDDAY_CONFIRM_OK",
+    "cumulative_pnl": 987.8,
+    "equity": 100394.5,
+    "telegram_message": "[1320 執行結果]\n策略：A\n動作：NO_TRADE\n原因：CONSTRAINED_BY_LEARNING_OUTPUT\n執行模式：0050直買\n執行本金：100,000\n今日起始：0.443\n起始股數：441\n今日已用：0\n今日剩餘：100,394\n下單金額：44,320\n現金前後：56,074 -> 100,394\n總資產：100,394\n持有股數：0\n持有均價：0.00\n已實現損益：988\n未實現損益：0\n目前累積損益：988\n0050部位：0.000\n現金：1.000\n0050即時：-2.00% @ 2026-05-28T05:00:00\n承接來源：cache\\trade_execution\\2026-05-27\\trade_state.json\n交易明細：\n- 賣出 0050.TW @ 100 × 441 股（約 44,320）\n參考資產：USO:-4.37% / GLD:-1.32% / TLT:+0.22% / QQQ:-0.11%\n目標曝險：0.000\nquote判斷：CANCEL | MIDDAY_CORE_BREAKDOWN",
     "telegram_sent": true,
     "telegram_error": ""
   },
   "parsedMacro": {
-    "date": "2026-05-27",
-    "generated_at": "2026-05-27T05:30:04.745Z",
+    "date": "2026-05-28",
+    "generated_at": "2026-05-28T05:30:02.965Z",
     "categories": {
       "technology": [
         {
-          "title": "Instagram betting ads featuring Kane and Haaland banned",
-          "summary": "英國廣告監管機構禁止含凱恩與哈蘭德的賭博廣告，認為這類廣告對未滿18歲青少年具有強烈吸引力。",
-          "source": "01-instagram-betting-ads-featuring-kane-and-haaland-b.md",
-          "link": "https://www.bbc.com/news/articles/c3w220y2l8xo?at_medium=RSS&at_campaign=rss",
+          "title": "NASA boss reveals unsettling reality behind newly released UFO files",
+          "summary": "NASA負責人表示，新解密的UFO檔案顯示，數十年來確有未解現象被隱藏，並未向美國公眾公開。",
+          "source": "01-nasa-boss-reveals-unsettling-reality-behind-newly-.md",
+          "link": "https://www.dailymail.com/sciencetech/article-15853471/NASA-boss-reveals-unsettling-reality-newly-released-UFO-files.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "strength": 1,
           "sentiment": "neutral",
           "category": "technology"
         },
         {
-          "title": "Tech Life",
-          "summary": "文章探討 AI 進入校園後，教師在課堂中的角色如何轉變，重點在於教學功能與人類教師價值的重新定位。",
-          "source": "02-tech-life.md",
-          "link": "https://www.bbc.co.uk/sounds/play/w3ct8jxx?at_medium=RSS&at_campaign=rss",
+          "title": "Fury erupts as thousands of sea lions face 'mass slaughter' in three US states",
+          "summary": "美國太平洋西北地區因擬擴大在三州獵殺海獅，引發強烈爭議與抗議，相關官員正推動執行計畫。",
+          "source": "02-fury-erupts-as-thousands-of-sea-lions-face-mass-sl.md",
+          "link": "https://www.dailymail.com/sciencetech/article-15852637/Fury-erupts-sea-lions-face-mass-slaughter-three-US-states.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "strength": 1,
           "sentiment": "neutral",
           "category": "technology"
         },
         {
-          "title": "Starmer vows to act on social media after meeting bereaved parents",
-          "summary": "Starmer 與喪子家長會面後承諾將對社群媒體採取行動，但部分家長仍質疑政府是否會採取足夠強硬的措施。",
-          "source": "03-starmer-vows-to-act-on-social-media-after-meeting-.md",
-          "link": "https://www.bbc.com/news/articles/c5y7r9gqp6jo?at_medium=RSS&at_campaign=rss",
+          "title": "Chilling bodycam reveals UFO-linked Air Force general met shadowy Pentagon unit before he vanished... and his perplexed wife's reaction",
+          "summary": "報導稱，一名失蹤空軍將領在消失前數小時，曾與五角大廈神秘單位秘密會面；最新曝光的執法紀錄影像也引發外界對其行蹤與妻子反應的關注。",
+          "source": "03-chilling-bodycam-reveals-ufo-linked-air-force-gene.md",
+          "link": "https://www.dailymail.com/sciencetech/article-15852221/william-mccasland-ufo-pentagon-disappearance-new-mexico.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "strength": 1,
           "sentiment": "neutral",
           "category": "technology"
         },
         {
-          "title": "Ever wish your dog could speak to you? AI collar can translate your pet's barks with 95% accuracy, experts claim",
-          "summary": "一款新型 AI 項圈號稱可將狗叫聲翻譯成人類可理解的意思，專家稱準確率可達 95%，引發關注。",
-          "source": "04-ever-wish-your-dog-could-speak-to-you-ai-collar-ca.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15848831/dog-speak-AI-collar-claims-translate.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "title": "Noah's Ark mystery deepens as ancient map points to resting place of biblical vessel",
+          "summary": "一張古地圖被指可能暗藏諾亞方舟位置，且其細節與《聖經》記載的停靠地點相符，引發外界對方舟下落的新一輪關注。",
+          "source": "04-noah-s-ark-mystery-deepens-as-ancient-map-points-t.md",
+          "link": "https://www.dailymail.com/sciencetech/article-15852247/noahs-ark-map-ararat-turkey.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "strength": 1,
-          "sentiment": "risk_on",
+          "sentiment": "neutral",
           "category": "technology"
         },
         {
-          "title": "Why does 30°C in the UK 'hit different'? Scientists blame high humidity and lack of air conditioning for the painful British heat",
-          "summary": "科學家指出，英國30°C體感特別難受，主因是高濕度與空調普及不足，使悶熱感更強、散熱更差。",
-          "source": "05-why-does-30-c-in-the-uk-hit-different-scientists-b.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15848443/UK-heat-scientists-blame-high-humidity.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "strength": 2,
-          "sentiment": "stagflation",
-          "category": "technology"
-        },
-        {
-          "title": "One step closer to space BABIES: China launches 'human artificial embryos' to find out if reproduction is possible in zero-gravity",
-          "summary": "中國發射「人造胚胎」研究太空微重力下人類是否能繁殖，朝解答太空生育可行性邁出一步。",
-          "source": "06-one-step-closer-to-space-babies-china-launches-hum.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15848779/China-launches-human-embryos-space.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "title": "Google Rolls Out ‘AI Mode’ in Search for Indian Users: What It Is, How It Works",
+          "summary": "Google在印度推出搜尋「AI Mode」，提供即時AI回答、智慧摘要與深入主題探索，且無需註冊即可使用。",
+          "source": "05-google-rolls-out-ai-mode-in-search-for-indian-user.md",
+          "link": "https://www.business2business.co.in/article/5481/google-ai-mode-search-india-2025",
           "strength": 2,
           "sentiment": "risk_on",
           "category": "technology"
         },
         {
-          "title": "UFO files reveal new evidence of secret invasion by mysterious silver spheres",
-          "summary": "五角大廈最新一批 UFO 檔案揭露，全球各地曾出現更多詭異球體的接觸紀錄，引發外界對其來源與性質的關注。",
-          "source": "07-ufo-files-reveal-new-evidence-of-secret-invasion-b.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15841235/ufo-files-secret-invasion-silver-spheres.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "strength": 1,
-          "sentiment": "neutral",
-          "category": "technology"
-        },
-        {
-          "title": "Think this is bad? Scientists predict just how hot the UK could get this summer - and say the worst is yet to come",
-          "summary": "英國五月高溫打破多地紀錄，氣候科學家警告，今夏可能更熱，最嚴峻的高溫情況尚未到來。",
-          "source": "08-think-this-is-bad-scientists-predict-just-how-hot-.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15848389/scientists-predict-UK-summer-temperature.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "title": "Exascale Labs to Present at Guosheng Securities SST Industry Forum in Shanghai on May 29, 2026",
+          "summary": "Exascale Labs宣布將於5月29日在上海國盛證券SST產業論壇發表演講，聚焦AI資料中心電力架構、HVDC與固態變壓器在高密度GPU部署中的應用。",
+          "source": "06-exascale-labs-to-present-at-guosheng-securities-ss.md",
+          "link": "https://www.benzinga.com/pressreleases/26/05/g52804099/exascale-labs-to-present-at-guosheng-securities-sst-industry-forum-in-shanghai-on-may-29-2026",
           "strength": 2,
-          "sentiment": "stagflation",
+          "sentiment": "risk_on",
           "category": "technology"
         },
         {
-          "title": "Scientists predict a global population crash by 2064 - with humanity potentially HALVED",
-          "summary": "專家警告，全球人口目前約83億，但可能在未來40年內急遽下滑，甚至到2064年減半。",
-          "source": "09-scientists-predict-a-global-population-crash-by-20.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15848473/Scientists-predict-global-population-crash-2064.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "strength": 3,
-          "sentiment": "risk_off",
-          "category": "technology"
-        },
-        {
-          "title": "CIA accused of using Ancestry and 23andMe to 'hunt down' alien bloodlines in millions of DNA tests",
-          "summary": "報導指稱美國中央情報局被控利用祖源與23andMe等數百萬筆DNA檢測資料，搜尋地球上外星生命或外星血統線索，引發爭議。",
-          "source": "10-cia-accused-of-using-ancestry-and-23andme-to-hunt-.md",
-          "link": "https://www.dailymail.com/sciencetech/article-15845349/cia-ancestry-23andme-alien-dna.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "title": "MCU has marveled India in the last five years",
+          "summary": "近五年來，漫威電影宇宙在印度累積龐大粉絲群，帶動民眾頻繁搜尋最新好萊塢作品，顯示其在當地影響力持續升高。",
+          "source": "07-mcu-has-marveled-india-in-the-last-five-years.md",
+          "link": "https://www.business2business.co.in/article/1457/mcu-has-marveled-india-in-the-last-five-years",
           "strength": 1,
           "sentiment": "neutral",
+          "category": "technology"
+        },
+        {
+          "title": "The rise of the fruit that tastes like custard",
+          "summary": "針對標題所述，文章指出釋迦樹因耐旱耐熱而受重視，但其果實質地嬌嫩、運輸與出口不易，限制了國際市場拓展。",
+          "source": "08-the-rise-of-the-fruit-that-tastes-like-custard.md",
+          "link": "https://www.bbc.com/news/articles/ce8pmrp0m47o?at_medium=RSS&at_campaign=rss",
+          "strength": 1,
+          "sentiment": "neutral",
+          "category": "technology"
+        },
+        {
+          "title": "Porn company fined £600,000 by Ofcom over age check failings",
+          "summary": "英國通訊管理局 Ofcom 指出，色情公司 Youngtek Solutions Ltd 在 2025 年 7 至 9 月間未落實年齡驗證，已被罰款 60 萬英鎊，之後才補強驗證措施。",
+          "source": "09-porn-company-fined-600-000-by-ofcom-over-age-check.md",
+          "link": "https://www.bbc.com/news/articles/clypxw6penno?at_medium=RSS&at_campaign=rss",
+          "strength": 1,
+          "sentiment": "neutral",
+          "category": "technology"
+        },
+        {
+          "title": "Champion ethical hacker warns AI tools like Mythos will make competing harder",
+          "summary": "知名白帽駭客 Chompie 表示，像 Claude Mythos 這類 AI 工具將提升攻防能力，讓頂尖倫理駭客之間的競爭更困難。",
+          "source": "10-champion-ethical-hacker-warns-ai-tools-like-mythos.md",
+          "link": "https://www.bbc.com/news/articles/c3r2zjpryzro?at_medium=RSS&at_campaign=rss",
+          "strength": 2,
+          "sentiment": "risk_on",
           "category": "technology"
         }
       ],
       "finance": [
         {
-          "title": "'Bullying' and 'overbearing' behaviour behind abrupt BP chairman removal",
-          "summary": "BP未評論是否因霸凌行為而即刻撤換董事長，外界關注其突然去職背後原因。",
-          "source": "01-bullying-and-overbearing-behaviour-behind-abrupt-b.md",
-          "link": "https://www.bbc.com/news/articles/cjrppppwvwlo?at_medium=RSS&at_campaign=rss",
+          "title": "Wet AMD Market Set for Robust Growth Through 2036, Driven by Advancements in Anti-VEGF Therapies | DelveInsight",
+          "summary": "濕性黃斑部病變市場預期至2036年穩健成長，主因為診斷病例增加、現有治療需求與多項抗VEGF新療法陸續上市。",
+          "source": "01-wet-amd-market-set-for-robust-growth-through-2036-.md",
+          "link": "https://www.prnewswire.com/news-releases/wet-amd-market-set-for-robust-growth-through-2036-driven-by-advancements-in-anti-vegf-therapies--delveinsight-302782608.html",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Instagram betting ads featuring Kane and Haaland banned",
-          "summary": "英國廣告監管機構禁止含凱恩與哈蘭德的 Instagram 博彩廣告，認為其對未滿18歲族群具有強烈吸引力。",
-          "source": "02-instagram-betting-ads-featuring-kane-and-haaland-b.md",
-          "link": "https://www.bbc.com/news/articles/c3w220y2l8xo?at_medium=RSS&at_campaign=rss",
+          "title": "EXCLUSIVE: HUHU Secures $15 Million First Major European Semiconductor Foundry Contract",
+          "summary": "HUHUTECH德國子公司取得歐洲半導體晶圓代工廠系列訂單，總值約1,390萬歐元，為其首筆歐洲重大基準合約。",
+          "source": "02-exclusive-huhu-secures-15-million-first-major-euro.md",
+          "link": "https://www.benzinga.com/markets/small-cap/26/05/52804105/exclusive-huhu-secures-15-million-first-major-european-semiconductor-foundry-contract",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Cement industry projecting ‘at least flat’ growth in 2026",
-          "summary": "菲律賓水泥製造商協會表示，受能源危機及去年基建貪腐醜聞後續影響，今年水泥銷售預期持平，盼市場至少維持零成長。",
-          "source": "03-cement-industry-projecting-at-least-flat-growth-in.md",
-          "link": "https://www.bworldonline.com/economy/2026/05/26/752327/cement-industry-projecting-at-least-flat-growth-in-2026/",
+          "title": "Wind Turbine Anti-corrosion Film Market Poised for Expansion as Wind Farms Adopt Advanced Surface Protection Forecast 2026-2032",
+          "summary": "QYResearch發布《風力渦輪機防腐膜市場2026報告》，分析2026至2032年市場趨勢，指出風電場採用先進表面防護將帶動需求成長。",
+          "source": "03-wind-turbine-anti-corrosion-film-market-poised-for.md",
+          "link": "https://www.openpr.com/news/4528906/wind-turbine-anti-corrosion-film-market-poised-for-expansion-as",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Sales and Operations Planning (S&OP) Software Market Size Accelerates at 14.8% CAGR | By Key Players: SAP, Oracle, Kinaxis, Blue Yonder, Anaplan, Infor",
-          "summary": "美伊戰事引發地緣政治衝擊，推升企業供應鏈風險管理、採購可視化與製造連續性需求，帶動S&OP軟體市場加速成長。",
-          "source": "04-sales-and-operations-planning-s-op-software-market.md",
-          "link": "https://www.openpr.com/news/4527370/sales-and-operations-planning-s-op-software-market-size",
+          "title": "Robinhood Will Let Customers Connect Their Own AI Agents to Trade Stocks and Use Credit Cards",
+          "summary": "Robinhood 宣布將允許付費方案用戶連接自有 AI 代理進行股票交易，並可使用信用卡相關功能，顯示其持續擴展金融與科技服務。",
+          "source": "04-robinhood-will-let-customers-connect-their-own-ai-.md",
+          "link": "https://www.barrons.com/advisor/articles/robinhood-ai-agent-credit-card-63531b09",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "BoC's Vincent: Structural changes in labor markets make BoC's job more complicated",
-          "summary": "加拿大央行副總裁Vincent表示，若經濟衝擊伴隨勞動市場結構性變化，貨幣政策判斷將更複雜、也更不明確。",
-          "source": "05-boc-s-vincent-structural-changes-in-labor-markets-.md",
-          "link": "https://www.fxstreet.com/news/bocs-vincent-structural-changes-in-labor-markets-make-bocs-job-more-complicated-202605261231",
+          "title": "Zeta partner Mastercard to power next-gen credit processing for banks, fintechs",
+          "summary": "Zeta與Mastercard宣布5年全球合作，將為銀行與金融科技業者提供新一代信用卡處理服務，強化支付基礎設施與產品能力。",
+          "source": "05-zeta-partner-mastercard-to-power-next-gen-credit-p.md",
+          "link": "https://www.business2business.co.in/article/3211/zeta-partner-mastercard-to-power-next-gen-credit-processing-for-banks-fintechs",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Centre's finances not rosy, says Cong on RBI's dividend to govt",
-          "summary": "國大黨議員賈伊拉姆·拉梅什稱，印度央行創紀錄上繳2.87兆盧比盈餘後，中央財政並非如外界所稱樂觀，並指央行下調風險緩衝以讓政府受惠。",
-          "source": "06-centre-s-finances-not-rosy-says-cong-on-rbi-s-divi.md",
-          "link": "https://newsable.asianetnews.com/india/centres-finances-not-rosy-says-cong-on-rbis-dividend-to-govt-articleshow-vb0kv98",
+          "title": "Adani Wilmar aims to raise up to Rs 4,000 crore via IPO",
+          "summary": "Adani Wilmar計劃透過首次公開募股籌資最高4000億盧比，作為擴張業務與提升資金來源的一部分。",
+          "source": "06-adani-wilmar-aims-to-raise-up-to-rs-4-000-crore-vi.md",
+          "link": "https://www.business2business.co.in/article/2987/adani-wilmar-aims-to-raise-up-to-rs-4000-crore-via-ipo",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "The Oasis Group Publishes 2026 Peaks Report On Estate Planning Platforms, Highlighting Market Leaders And Industry Transformation",
-          "summary": "Oasis Group發布2026 Peaks報告，指出遺產規劃平台已成為顧問成長、客戶互動與競爭差異化的重要工具，並點出市場領導者與產業轉型趨勢。",
-          "source": "07-the-oasis-group-publishes-2026-peaks-report-on-est.md",
-          "link": "https://menafn.com/1111170087/The-Oasis-Group-Publishes-2026-Peaks-Report-On-Estate-Planning-Platforms-Highlighting-Market-Leaders-And-Industry-Transformation",
+          "title": "Drivers and risks of cryptocurrency boom",
+          "summary": "加密貨幣價格上漲吸引追逐波動的投資人進場，市場熱度升高，但也伴隨更大風險與劇烈波動。",
+          "source": "07-drivers-and-risks-of-cryptocurrency-boom.md",
+          "link": "https://www.business2business.co.in/article/1198/drivers-and-risks-of-cryptocurrency-boom",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Dreamsofa Disrupts Fast Furniture Market With 2026 Circular Design Mandate And PFAS-Free Standard",
-          "summary": "DreamSofa宣布2026永續標準，要求產品採循環設計並全面採用無PFAS材料，主打重塑快速家具與高端家具製造模式。",
-          "source": "08-dreamsofa-disrupts-fast-furniture-market-with-2026.md",
-          "link": "https://menafn.com/1111170080/Dreamsofa-Disrupts-Fast-Furniture-Market-With-2026-Circular-Design-Mandate-And-PFAS-Free-Standard",
+          "title": "Launch of decentralised exchange next month- WazirX",
+          "summary": "印度最大加密貨幣交易所 WazirX 表示，已進入推出自家去中心化交易所的後期階段，預計將於下月上線。",
+          "source": "08-launch-of-decentralised-exchange-next-month-wazirx.md",
+          "link": "https://www.business2business.co.in/article/2988/launch-of-decentralised-exchange-next-month-wazirx",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Weekly Report TEN Share Buyback From May 18 To May 22, 2026",
-          "summary": "Technip Energies 公布 2026 年 5 月 18 日至 22 日期間的自家股票回購情況，屬例行性股權回購資訊揭露。",
-          "source": "09-weekly-report-ten-share-buyback-from-may-18-to-may.md",
-          "link": "https://menafn.com/1111170085/Weekly-Report-TEN-Share-Buyback-From-May-18-To-May-22-2026",
+          "title": "Exascale Labs to Present at Guosheng Securities SST Industry Forum in Shanghai on May 29, 2026",
+          "summary": "Exascale Labs將於5月29日在上海國盛證券SST產業論壇發表，討論固態變壓器與HVDC架構在新一代AI資料中心的重要性，並提及其與D. Boral ARC Acquisition I Corp.的擬議合併。",
+          "source": "09-exascale-labs-to-present-at-guosheng-securities-ss.md",
+          "link": "https://www.globenewswire.com/fr/news-release/2026/05/27/3301957/0/en/Exascale-Labs-to-Present-at-Guosheng-Securities-SST-Industry-Forum-in-Shanghai-on-May-29-2026.html",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
         },
         {
-          "title": "Ethiopia Allows Private Banks to Issue Export Trade Permits to Products Destined China",
-          "summary": "衣索比亞國家銀行宣布，取消民營銀行不得為出口中國商品核發出口貿易許可的限制，盼促進出口、提升競爭力並改善銀行服務。",
-          "source": "10-ethiopia-allows-private-banks-to-issue-export-trad.md",
-          "link": "https://newbusinessethiopia.com/trade/ethiopia-allows-private-banks-to-issue-export-trade-permits-to-products-destined-china/",
+          "title": "Top 7 best ethanol stocks to invest in India 2024",
+          "summary": "文章介紹 2024 年印度值得關注的 7 檔乙醇概念股，點名 Triveni Engineering、Balrampur Chini Mills 等公司，供投資人參考。",
+          "source": "10-top-7-best-ethanol-stocks-to-invest-in-india-2024.md",
+          "link": "https://www.business2business.co.in/article/5183/top-7-best-ethanol-stocks-to-invest-in-india-2024",
           "strength": 1,
           "sentiment": "neutral",
           "category": "finance"
@@ -1002,93 +998,93 @@ window.ETFDashboardBootstrap = {
       ],
       "politics": [
         {
-          "title": "RCB vs GT LIVE Updates, IPL 2026 Playoffs: Heavyweights Battle For Spot In The Final",
-          "summary": "RCB與GT在IPL 2026資格賽1於達蘭薩拉交鋒，爭奪直接晉級決賽門票。RCB挾衛冕冠軍與主場適應優勢，GT則靠Gill領軍與穩定戰力迎戰。",
-          "source": "01-rcb-vs-gt-live-updates-ipl-2026-playoffs-heavyweig.md",
-          "link": "https://news.abplive.com/sports/ipl/rcb-vs-gt-live-updates-ipl-2026-playoffs-qualifier-1-virat-kohli-shubman-gill-bhuvneshwar-kumar-1846272",
+          "title": "Legal bid to block UK-backed French migrant detention centre",
+          "summary": "英國內政部表示，若法國移民拘留中心未啟用，英國將不會依協議向法方付款，該案旨在遏止偷渡越境。",
+          "source": "01-legal-bid-to-block-uk-backed-french-migrant-detent.md",
+          "link": "https://www.bbc.com/news/articles/cdxpdqvdyz7o?at_medium=RSS&at_campaign=rss",
+          "strength": 2,
+          "sentiment": "neutral",
+          "category": "politics"
+        },
+        {
+          "title": "One in six young people will not be in work or training in five years without action, report warns",
+          "summary": "報告警告，若不採取行動，五年內每六名年輕人就有一人可能失業或未受訓，青年進入職場的機會正變得遙不可及。",
+          "source": "02-one-in-six-young-people-will-not-be-in-work-or-tra.md",
+          "link": "https://www.bbc.com/news/articles/cy026x9jpd0o?at_medium=RSS&at_campaign=rss",
+          "strength": 2,
+          "sentiment": "risk_off",
+          "category": "politics"
+        },
+        {
+          "title": "Burnham and Streeting accuse Blair of ignoring inequality as they hit back at ex-PM",
+          "summary": "工黨市長伯納姆與前部長斯特里廷回應前首相布萊爾長文，反批其忽視不平等問題，雙方就工黨路線再起爭論。",
+          "source": "03-burnham-and-streeting-accuse-blair-of-ignoring-ine.md",
+          "link": "https://www.bbc.com/news/articles/ckgp4llnn12o?at_medium=RSS&at_campaign=rss",
           "strength": 1,
           "sentiment": "neutral",
           "category": "politics"
         },
         {
-          "title": "Labour has 'no coherent plan' for country, says Blair",
-          "summary": "前工黨首相布萊爾批評施凱爾·斯塔默領導的工黨政府在下次大選前處於「錯誤立場」，並指其對國家缺乏一致且明確的計畫。",
-          "source": "02-labour-has-no-coherent-plan-for-country-says-blair.md",
-          "link": "https://www.bbc.com/news/articles/cx211r9nm3lo?at_medium=RSS&at_campaign=rss",
+          "title": "Sturgeon defends 'no comment' police interview after SNP funds probe arrest",
+          "summary": "前蘇格蘭民族黨領袖史特金在黨內資金調查中被捕後，律師稱她在警方訊問時回答「不予置評」屬標準做法，之後已以書面回覆警方提問。",
+          "source": "04-sturgeon-defends-no-comment-police-interview-after.md",
+          "link": "https://www.bbc.com/news/articles/cwy2kww2jzpo?at_medium=RSS&at_campaign=rss",
           "strength": 1,
           "sentiment": "neutral",
           "category": "politics"
         },
         {
-          "title": "Starmer vows to act on social media after meeting bereaved parents",
-          "summary": "Starmer 與失去子女的家長會面後承諾將對社群媒體採取行動，但部分家長仍懷疑政府是否會採取足夠強硬的措施。",
-          "source": "03-starmer-vows-to-act-on-social-media-after-meeting-.md",
-          "link": "https://www.bbc.com/news/articles/c5y7r9gqp6jo?at_medium=RSS&at_campaign=rss",
+          "title": "Will Tony Blair's intervention change the Labour debate?",
+          "summary": "布萊爾介入工黨內部辯論，但雖仍有支持者，黨內其他派系似乎並不買帳，影響力有限。",
+          "source": "05-will-tony-blair-s-intervention-change-the-labour-d.md",
+          "link": "https://www.bbc.com/news/articles/cx21vx5x550o?at_medium=RSS&at_campaign=rss",
           "strength": 1,
           "sentiment": "neutral",
           "category": "politics"
         },
         {
-          "title": "U.S. Fuel Travels Over 9,000 Miles to Reach Ukraine. How Gas Station Chain UPG Imports American Diesel",
-          "summary": "烏克蘭燃料零售商UPG自2023年起從美國德州進口柴油，成為戰時供應鏈核心；三年內加油站數從不到100家增至650多家。",
-          "source": "04-u-s-fuel-travels-over-9-000-miles-to-reach-ukraine.md",
-          "link": "https://www.benzinga.com/pressreleases/26/05/n52774093/u-s-fuel-travels-over-9-000-miles-to-reach-ukraine-how-gas-station-chain-upg-imports-american-dies",
+          "title": "MetaVia Presents Higher-Dose Phase 1 Results for DA-1726 at EASL Congress 2026, Supporting Potential in Obesity and MASH",
+          "summary": "MetaVia在EASL 2026公布DA-1726高劑量一期結果，48毫克組於第54天平均減重最高9.1%，且未見平台，並顯示早期肝臟改善跡象。",
+          "source": "06-metavia-presents-higher-dose-phase-1-results-for-d.md",
+          "link": "https://www.prnewswire.com/news-releases/metavia-presents-higher-dose-phase-1-results-for-da-1726-at-easl-congress-2026-supporting-potential-in-obesity-and-mash-302782740.html",
           "strength": 2,
           "sentiment": "risk_on",
           "category": "politics"
         },
         {
-          "title": "States raise Rs 11,625 crore via SGS auction, miss notified amount",
-          "summary": "各州透過印度央行舉行的州政府證券拍賣，共籌得1.1625兆盧比，低於公告目標1.345兆盧比，顯示融資需求未完全達標。",
-          "source": "05-states-raise-rs-11-625-crore-via-sgs-auction-miss-.md",
-          "link": "https://newsable.asianetnews.com/business/states-raise-rs-11625-crore-via-sgs-auction-miss-notified-amount-articleshow-4a82ry7",
+          "title": "Govt to spend ₹22,810 cr on Atmanirbhar Bharat Rozgar Yojana, to benefit over 58 lakh employees",
+          "summary": "印度內閣批准「自立印度就業計畫」私營部門EPF補貼方案，總支出1,584億盧比，預計惠及逾58萬名員工。",
+          "source": "07-govt-to-spend-22-810-cr-on-atmanirbhar-bharat-rozg.md",
+          "link": "https://www.business2business.co.in/article/2619/govt-to-spend-%C3%A2%E2%80%9A%C2%B922-810-cr-on-atmanirbhar-bharat-rozgar-yojana-to-benefit-over-58-lakh-employees",
           "strength": 2,
-          "sentiment": "neutral",
+          "sentiment": "risk_on",
           "category": "politics"
         },
         {
-          "title": "Texas Primary Runoff: Key races and what’s on the ballot in North Texas",
-          "summary": "德州5月26日初選決選登場，北德州多個聯邦眾議員與參議員席位競逐激烈，選民可查樣本選票與各郡投票資訊。",
-          "source": "06-texas-primary-runoff-key-races-and-what-s-on-the-b.md",
-          "link": "https://www.fox4news.com/election/texas-primary-runoff-key-races",
-          "strength": 1,
-          "sentiment": "neutral",
-          "category": "politics"
-        },
-        {
-          "title": "Ghana’s extractive sector needs clearer, stronger policies — Ayi-Owoo",
-          "summary": "德勤加納合夥人Ayi-Owoo呼籲加納制定更清晰、前瞻且有力的政策框架，以強化採掘業並確保各方共享利益。",
-          "source": "07-ghana-s-extractive-sector-needs-clearer-stronger-p.md",
-          "link": "https://www.myjoyonline.com/ghanas-extractive-sector-needs-clearer-stronger-policies-ayi-owoo/",
+          "title": "Bill Soon To Tackle Bankruptcy In Financial Sector: Shaktikanta Das",
+          "summary": "印度經濟事務 सचिव達斯表示，一項處理金融業破產問題的法案已備妥，預計很快將提交國會審議。",
+          "source": "08-bill-soon-to-tackle-bankruptcy-in-financial-sector.md",
+          "link": "https://www.business2business.co.in/article/535/bill-soon-to-tackle-bankruptcy-in-financial-sector-shaktikanta-das",
           "strength": 2,
-          "sentiment": "neutral",
-          "category": "politics"
-        },
-        {
-          "title": "UK to sanction crypto networks in bid to shut off 'Putin war machine'",
-          "summary": "英國宣布新一輪制裁，將鎖定加密貨幣網絡，試圖切斷俄羅斯戰爭機器的資金來源，進一步壓縮其戰爭融資管道。",
-          "source": "08-uk-to-sanction-crypto-networks-in-bid-to-shut-off-.md",
-          "link": "https://www.thenational.scot/news/26139259.new-uk-sanctions-tackle-crypto-networks-used-russia/",
-          "strength": 3,
           "sentiment": "risk_off",
           "category": "politics"
         },
         {
-          "title": "Texas runoff Election Day 2026 key races to know for El Paso voters",
-          "summary": "德州選民參與初選決選投票，重點選戰包括美國參議院及地方法官職位，對埃爾帕索選民具參考意義。",
-          "source": "09-texas-runoff-election-day-2026-key-races-to-know-f.md",
-          "link": "https://www.elpasotimes.com/story/news/politics/elections/2026/05/26/texas-primary-runoff-election-2026-key-races-for-el-paso-voters/90197115007/",
+          "title": "‘WILL BUDGET 2017 FLIP THE CART?’ – Expert piece by Khaitan & Co. on pre-budget expectations by the e-commerce sector!",
+          "summary": "文章討論印度2017預算案前，電商業界對政策的期待，聚焦數位印度、無現金經濟與電子商務發展環境。",
+          "source": "09-will-budget-2017-flip-the-cart-expert-piece-by-kha.md",
+          "link": "https://www.business2business.co.in/article/507/will-budget-2017-flip-the-cart-expert-piece-by-khaitan-co-on-pre-budget-expectations-by-the-e-commerce-sector",
           "strength": 1,
           "sentiment": "neutral",
           "category": "politics"
         },
         {
-          "title": "Where to vote in Travis County runoff election Tuesday, plus what’s on the ballot",
-          "summary": "本文說明 Travis County 選民週二可前往投票的地點，並整理民主、共和兩黨初選決選選票上的競選項目。",
-          "source": "10-where-to-vote-in-travis-county-runoff-election-tue.md",
-          "link": "https://www.statesman.com/news/politics/elections/article/travis-county-runoff-election-ballot-guide-22274616.php",
-          "strength": 1,
-          "sentiment": "neutral",
+          "title": "Energy bills to rise for millions as impact of Iran war hits",
+          "summary": "英國監管機構調高能源價格上限，典型家庭年能源帳單將增加221英鎊，數百萬戶受影響。",
+          "source": "10-energy-bills-to-rise-for-millions-as-impact-of-ira.md",
+          "link": "https://www.bbc.com/news/articles/ce8pw464986o?at_medium=RSS&at_campaign=rss",
+          "strength": 4,
+          "sentiment": "stagflation",
           "category": "politics"
         }
       ]
@@ -1249,7 +1245,11 @@ window.ETFDashboardBootstrap = {
     },
     {
       "date": "2026-05-27",
-      "portfolioValue": 112208.66276485597
+      "portfolioValue": 112143.94238095923
+    },
+    {
+      "date": "2026-05-28",
+      "portfolioValue": 111138.43556605384
     }
   ],
   "mockPortfolioSeries": [
@@ -1448,6 +1448,24 @@ window.ETFDashboardBootstrap = {
           "slot": "1320",
           "equity": 101358.95,
           "timestamp": "2026-05-27 13:20:10"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "openValue": 101871.85,
+      "closeValue": 100394.5,
+      "deltaValue": -1477.3500000000058,
+      "points": [
+        {
+          "slot": "0930",
+          "equity": 101871.85,
+          "timestamp": "2026-05-28 09:30:10"
+        },
+        {
+          "slot": "1320",
+          "equity": 100394.5,
+          "timestamp": "2026-05-28 13:20:11"
         }
       ]
     }
